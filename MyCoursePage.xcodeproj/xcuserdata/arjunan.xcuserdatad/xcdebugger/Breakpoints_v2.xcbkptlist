@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4A03E8E2-FE81-4E5E-8B19-51BFDE8807FD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E9C5C9D-05D3-48CF-BED4-B4AC8DE8F8A2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCoursePage/MyCourseViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "forApiIntegration(course:id:institutionCalendarId:courseType:level:term:rotation:rotationCount:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1E9C5C9D-05D3-48CF-BED4-B4AC8DE8F8A2 - 670c29362394d25d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyCoursePage.MyCourseVieModel.forApiIntegration(id: Swift.String, institutionCalendarId: Swift.String, courseType: Swift.String, level: Swift.String, term: Swift.String, rotation: Swift.String, rotationCount: Swift.Int, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "MyCoursePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/MyCourseViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1799">
+               </Location>
+               <Location
+                  uuid = "1E9C5C9D-05D3-48CF-BED4-B4AC8DE8F8A2 - 670c29362394d25d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyCoursePage.MyCourseVieModel.forApiIntegration(id: Swift.String, institutionCalendarId: Swift.String, courseType: Swift.String, level: Swift.String, term: Swift.String, rotation: Swift.String, rotationCount: Swift.Int, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "MyCoursePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/MyCourseViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "2204">
+               </Location>
+               <Location
+                  uuid = "1E9C5C9D-05D3-48CF-BED4-B4AC8DE8F8A2 - 670c29362394d25d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyCoursePage.MyCourseVieModel.forApiIntegration(id: Swift.String, institutionCalendarId: Swift.String, courseType: Swift.String, level: Swift.String, term: Swift.String, rotation: Swift.String, rotationCount: Swift.Int, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "MyCoursePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/MyCourseViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "3247">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A6FFF56-A91E-4034-AB3A-50DC34F7EF53"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCoursePage/MyCourseViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "forApiIntegration(course:id:institutionCalendarId:courseType:level:term:rotation:rotationCount:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A783366-8B39-4F6E-BD6C-57162A454E2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCoursePage/MyCourseViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "forApiIntegration(course:id:institutionCalendarId:courseType:level:term:rotation:rotationCount:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5A783366-8B39-4F6E-BD6C-57162A454E2E - fa39fb76a45266d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of MyCoursePage.MyCourseVieModel.forApiIntegration(id: Swift.String, institutionCalendarId: Swift.String, courseType: Swift.String, level: Swift.String, term: Swift.String, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "MyCoursePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/MyCourseViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "5A783366-8B39-4F6E-BD6C-57162A454E2E - 9e47ee2bb67988d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of MyCoursePage.MyCourseVieModel.forApiIntegration(id: Swift.String, institutionCalendarId: Swift.String, courseType: Swift.String, level: Swift.String, term: Swift.String, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "MyCoursePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/MyCourseViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "5A783366-8B39-4F6E-BD6C-57162A454E2E - b255911c802532dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 2 of MyCoursePage.MyCourseVieModel.forApiIntegration(id: Swift.String, institutionCalendarId: Swift.String, courseType: Swift.String, level: Swift.String, term: Swift.String, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "MyCoursePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/MyCourseViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "5A783366-8B39-4F6E-BD6C-57162A454E2E - 566384d192d064dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 3 of MyCoursePage.MyCourseVieModel.forApiIntegration(id: Swift.String, institutionCalendarId: Swift.String, courseType: Swift.String, level: Swift.String, term: Swift.String, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "MyCoursePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/MyCourseViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "5A783366-8B39-4F6E-BD6C-57162A454E2E - 4a71b782ecff8edf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 4 of MyCoursePage.MyCourseVieModel.forApiIntegration(id: Swift.String, institutionCalendarId: Swift.String, courseType: Swift.String, level: Swift.String, term: Swift.String, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "MyCoursePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/MyCourseViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "5A783366-8B39-4F6E-BD6C-57162A454E2E - 84b5a812dba238af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyCoursePage.MyCourseVieModel.forApiIntegration(id: Swift.String, institutionCalendarId: Swift.String, courseType: Swift.String, level: Swift.String, term: Swift.String, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "MyCoursePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/MyCourseViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "637">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

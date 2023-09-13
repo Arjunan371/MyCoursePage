@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F77D33A2AB075DC00EE9513 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */; };
 		9F8A061E2AAAF12600D3AF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A061D2AAAF12600D3AF34 /* AppDelegate.swift */; };
 		9F8A06202AAAF12600D3AF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A061F2AAAF12600D3AF34 /* SceneDelegate.swift */; };
 		9F8A06222AAAF12600D3AF34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06212AAAF12600D3AF34 /* ViewController.swift */; };
@@ -16,6 +17,14 @@
 		9F8A06352AAAF12800D3AF34 /* MyCoursePageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06342AAAF12800D3AF34 /* MyCoursePageTests.swift */; };
 		9F8A063F2AAAF12800D3AF34 /* MyCoursePageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A063E2AAAF12800D3AF34 /* MyCoursePageUITests.swift */; };
 		9F8A06412AAAF12800D3AF34 /* MyCoursePageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06402AAAF12800D3AF34 /* MyCoursePageUITestsLaunchTests.swift */; };
+		9F8A064F2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A064D2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift */; };
+		9F8A06502AAAF7C000D3AF34 /* MyCourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8A064E2AAAF7C000D3AF34 /* MyCourseTableViewCell.xib */; };
+		9F8A06522AAB02C100D3AF34 /* MyCourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06512AAB02C100D3AF34 /* MyCourseModel.swift */; };
+		9F8A06542AAB02F600D3AF34 /* MyCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06532AAB02F600D3AF34 /* MyCourseViewModel.swift */; };
+		9F8A06562AAB330500D3AF34 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */; };
+		9FE2306B2AAF43320008B489 /* AcademicYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2306A2AAF43320008B489 /* AcademicYearViewController.swift */; };
+		9FE2306E2AAF468C0008B489 /* AcademicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2306C2AAF468C0008B489 /* AcademicTableViewCell.swift */; };
+		9FE2306F2AAF468C0008B489 /* AcademicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE2306D2AAF468C0008B489 /* AcademicTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9F8A061A2AAAF12600D3AF34 /* MyCoursePage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCoursePage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8A061D2AAAF12600D3AF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8A061F2AAAF12600D3AF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +59,14 @@
 		9F8A063A2AAAF12800D3AF34 /* MyCoursePageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCoursePageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8A063E2AAAF12800D3AF34 /* MyCoursePageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursePageUITests.swift; sourceTree = "<group>"; };
 		9F8A06402AAAF12800D3AF34 /* MyCoursePageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursePageUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9F8A064D2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
+		9F8A064E2AAAF7C000D3AF34 /* MyCourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCourseTableViewCell.xib; sourceTree = "<group>"; };
+		9F8A06512AAB02C100D3AF34 /* MyCourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseModel.swift; sourceTree = "<group>"; };
+		9F8A06532AAB02F600D3AF34 /* MyCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseViewModel.swift; sourceTree = "<group>"; };
+		9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		9FE2306A2AAF43320008B489 /* AcademicYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicYearViewController.swift; sourceTree = "<group>"; };
+		9FE2306C2AAF468C0008B489 /* AcademicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicTableViewCell.swift; sourceTree = "<group>"; };
+		9FE2306D2AAF468C0008B489 /* AcademicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcademicTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +120,15 @@
 				9F8A061D2AAAF12600D3AF34 /* AppDelegate.swift */,
 				9F8A061F2AAAF12600D3AF34 /* SceneDelegate.swift */,
 				9F8A06212AAAF12600D3AF34 /* ViewController.swift */,
+				9F8A06512AAB02C100D3AF34 /* MyCourseModel.swift */,
+				9F8A06532AAB02F600D3AF34 /* MyCourseViewModel.swift */,
+				9F8A064D2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift */,
+				9FE2306A2AAF43320008B489 /* AcademicYearViewController.swift */,
+				9FE2306C2AAF468C0008B489 /* AcademicTableViewCell.swift */,
+				9FE2306D2AAF468C0008B489 /* AcademicTableViewCell.xib */,
+				9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */,
+				9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */,
+				9F8A064E2AAAF7C000D3AF34 /* MyCourseTableViewCell.xib */,
 				9F8A06232AAAF12600D3AF34 /* Main.storyboard */,
 				9F8A06262AAAF12700D3AF34 /* Assets.xcassets */,
 				9F8A06282AAAF12700D3AF34 /* LaunchScreen.storyboard */,
@@ -231,7 +258,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8A06502AAAF7C000D3AF34 /* MyCourseTableViewCell.xib in Resources */,
 				9F8A062A2AAAF12700D3AF34 /* LaunchScreen.storyboard in Resources */,
+				9FE2306F2AAF468C0008B489 /* AcademicTableViewCell.xib in Resources */,
 				9F8A06272AAAF12700D3AF34 /* Assets.xcassets in Resources */,
 				9F8A06252AAAF12600D3AF34 /* Main.storyboard in Resources */,
 			);
@@ -258,9 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8A064F2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift in Sources */,
 				9F8A06222AAAF12600D3AF34 /* ViewController.swift in Sources */,
 				9F8A061E2AAAF12600D3AF34 /* AppDelegate.swift in Sources */,
+				9F8A06522AAB02C100D3AF34 /* MyCourseModel.swift in Sources */,
+				9FE2306B2AAF43320008B489 /* AcademicYearViewController.swift in Sources */,
 				9F8A06202AAAF12600D3AF34 /* SceneDelegate.swift in Sources */,
+				9F77D33A2AB075DC00EE9513 /* ActivityIndicator.swift in Sources */,
+				9F8A06542AAB02F600D3AF34 /* MyCourseViewModel.swift in Sources */,
+				9FE2306E2AAF468C0008B489 /* AcademicTableViewCell.swift in Sources */,
+				9F8A06562AAB330500D3AF34 /* CircularProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +473,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SY4CHD2YQ6;
+				DEVELOPMENT_TEAM = J9WNYC5Y9P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyCoursePage/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -465,7 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SY4CHD2YQ6;
+				DEVELOPMENT_TEAM = J9WNYC5Y9P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyCoursePage/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
