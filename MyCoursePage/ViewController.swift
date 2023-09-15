@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController{
     
+    @IBOutlet weak var academicYearLabel: UILabel!
     @IBOutlet weak var myCourseLabel: UILabel!
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var menuButton: UIButton!
@@ -20,7 +21,6 @@ class ViewController: UIViewController{
     @IBOutlet weak var toStartButton: UIButton!
     let viewModel = MyCourseVieModel()
     public var activityIndicator = ActivityIndicator()
-    var cellDataLoad: (() ->())?
     @IBOutlet weak var myCourseTableView: UITableView!
     
     var searchBar1: UISearchBar = {
@@ -36,10 +36,16 @@ class ViewController: UIViewController{
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        allButton.tintColor = .systemBlue
+        print("currentDate",Date.getCurrentDate())
+        academicYearLabel.text = "Academic Year: 2025 - 2026"
+        viewModel.forInitialApiIntegration(){
+            self.viewModel.filteredData()
+            self.myCourseTableView.reloadData()
+        }
         view.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
         myCourseTableView.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
         allButton.backgroundColor = .white
@@ -51,12 +57,10 @@ class ViewController: UIViewController{
         myCourseTableView.register(UINib(nibName: "MyCourseTableViewCell", bundle: nil), forCellReuseIdentifier: "MyCourseTableViewCell")
         myCourseTableView.delegate = self
         myCourseTableView.dataSource = self
-        // viewModel.forAppendDataInModel()
     }
     
     func constraintForSearchBar() {
         view.addSubview(searchBar1)
-        
         NSLayoutConstraint.activate([
             searchBar1.topAnchor.constraint(equalTo: searchButton.topAnchor),
             searchBar1.leadingAnchor.constraint(equalTo: menuButton.trailingAnchor,constant: 5),
@@ -74,12 +78,31 @@ class ViewController: UIViewController{
     }
     
     @IBAction func academicYearButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "academic", sender: self)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "academic") as? AcademicYearViewController
+        vc?.didSelectAcadamicYear = { [self] (academicYear,academicModel) in
+            print(academicYear)
+            self.academicYearLabel.text = "Academic Year: \(academicYear)"
+            self.viewModel.forInitialApiIntegration(academicModel: academicModel){
+                self.viewModel.showAcademicDataIndicator = {
+                    self.activityIndicator.showActivityIndicator(uiView: self.view)
+                }
+                self.viewModel.filteredData(searchText: self.searchBar1.text ?? "")
+                self.myCourseTableView.reloadData()
+                self.activityIndicator.hideActivityIndicator()
+            }
+            viewModel.filteredData(searchText: self.searchBar1.text ?? "")
+        }
+        self.present(vc!, animated: true)
     }
     
     @IBAction func toStartAction(_ sender: UIButton) {
         viewModel.filterButtonIndex = 1
-        //  viewModel.filteredData()
+        toStartButton.tintColor = .systemBlue
+        allButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        completeButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        progressButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        viewModel.filteredData(searchText: searchBar1.text ?? "")
+        myCourseTableView.reloadData()
         toStartButton.backgroundColor = .white
         allButton.backgroundColor = .white.withAlphaComponent(0.3)
         progressButton.backgroundColor = .white.withAlphaComponent(0.3)
@@ -88,7 +111,12 @@ class ViewController: UIViewController{
     
     @IBAction func completedAction(_ sender: UIButton) {
         viewModel.filterButtonIndex = 2
-        //   viewModel.filteredData()
+        toStartButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        allButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        completeButton.tintColor = .systemBlue
+        progressButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        viewModel.filteredData(searchText: searchBar1.text ?? "")
+        myCourseTableView.reloadData()
         completeButton.backgroundColor = .white
         toStartButton.backgroundColor = .white.withAlphaComponent(0.3)
         progressButton.backgroundColor = .white.withAlphaComponent(0.3)
@@ -97,7 +125,12 @@ class ViewController: UIViewController{
     
     @IBAction func progressAction(_ sender: UIButton) {
         viewModel.filterButtonIndex = 3
-        // viewModel.filteredData()
+        toStartButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        allButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        completeButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        progressButton.tintColor = .systemBlue
+        viewModel.filteredData(searchText: searchBar1.text ?? "")
+        myCourseTableView.reloadData()
         progressButton.backgroundColor = .white
         toStartButton.backgroundColor = .white.withAlphaComponent(0.3)
         allButton.backgroundColor = .white.withAlphaComponent(0.3)
@@ -106,7 +139,12 @@ class ViewController: UIViewController{
     
     @IBAction func allAction(_ sender: UIButton) {
         viewModel.filterButtonIndex = 4
-        // viewModel.filteredData()
+        toStartButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        allButton.tintColor = .systemBlue
+        completeButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        progressButton.tintColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        viewModel.filteredData(searchText: searchBar1.text ?? "")
+        myCourseTableView.reloadData()
         allButton.backgroundColor = .white
         toStartButton.backgroundColor = .white.withAlphaComponent(0.3)
         progressButton.backgroundColor = .white.withAlphaComponent(0.3)
@@ -123,6 +161,7 @@ class ViewController: UIViewController{
         searchButton.isHidden = true
     }
 }
+
 extension ViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -132,20 +171,22 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCourseTableViewCell", for: indexPath) as! MyCourseTableViewCell
         let myCouse = viewModel.dataCourseListModel[indexPath.row]
-        
+        cell.downArrow.addTarget(self, action: #selector(downArrowButton), for: .touchUpInside)
         cell.topicLabel.text = "\(myCouse.courseName ?? "")"
-        cell.dateLabel.text = "\(myCouse.term ?? "") - \(myCouse.level ?? "")/\(DateFromWebtoApp(myCouse.startDate ?? ""))/\(DateFromWebtoApp(myCouse.startDate ?? ""))"
-        
-        cell.downArrow.addTarget(self, action: #selector(downAroowButton), for: .touchUpInside)
+        cell.dateLabel.text = "\(myCouse.term ?? "") - \(myCouse.level ?? "")/\(DateFromWebtoApp(myCouse.startDate ?? ""))/\(DateFromWebtoApp(myCouse.endDate ?? ""))"
         if myCouse.downArrow {
-            cell.view2.isHidden = false
             cell.view3.isHidden = false
+            cell.view2.isHidden = false
+            cell.view3.layer.cornerRadius = 10
             cell.downArrow.setImage(UIImage(systemName: "chevron.up"), for: .normal)
             cell.attendanceDetailLabel.text = "Attendance Detail"
+            cell.warningButton.setTitle("Denial", for: .normal)
             cell.sessionAttendLabel.text = "\(doubleDigitString(from: myCouse.sessionData?.attendedSessions ?? 0) )/ \(doubleDigitString(from: myCouse.sessionData?.completedSessions ?? 0) ) Sessions Attented"
             cell.sessionAttendBelowLabel.text = "\(doubleDigitString(from: myCouse.sessionData?.leaveCount ?? 0) ) Leave . \(doubleDigitString(from: myCouse.sessionData?.absentCount ?? 0) ) Absent"
             cell.inProgressLabel.text = "\(doubleDigitString(from: myCouse.sessionData?.completedSessions ?? 0) )/ \(doubleDigitString(from: myCouse.sessionData?.totalSessions ?? 0) ) Sessions Completed"
-            cell.warningButton.setTitle("\(myCouse.sessionData?.warningData ?? "" )", for: .normal)
+            if cell.view2.isHidden == false {
+                cell.warningButton.setTitle("Denial", for: .normal)
+            }
         }
         else {
             cell.view2.isHidden = true
@@ -155,15 +196,17 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
         if myCouse.sessionData?.completedSessions == 0 {
             cell.view2.isHidden = true
         }
-        if myCouse.sessionData?.totalSessions == 0 || myCouse.sessionData?.completedSessions == 0{
-            cell.sessionsCompletedLabel.text = "To Start"
-            cell.sessionsCompletedLabel.textColor = .systemRed
-        } else if myCouse.sessionData?.totalSessions == myCouse.sessionData?.completedSessions  {
-            cell.sessionsCompletedLabel.text = "Completed"
-            cell.sessionsCompletedLabel.textColor = .systemGreen
-        } else {
-            cell.sessionsCompletedLabel.text = "In Progress"
-            cell.sessionsCompletedLabel.textColor = .black
+        if myCouse.downArrow {
+            if myCouse.sessionData?.totalSessions == 0 || myCouse.sessionData?.completedSessions == 0{
+                cell.sessionsCompletedLabel.text = "To Start"
+                cell.sessionsCompletedLabel.textColor = .systemRed
+            } else if myCouse.sessionData?.completedSessions ?? 0 > 0 {
+                cell.sessionsCompletedLabel.text = "In Progress"
+                cell.sessionsCompletedLabel.textColor = .black
+            } else if myCouse.sessionData?.totalSessions == myCouse.sessionData?.completedSessions  {
+                cell.sessionsCompletedLabel.text = "Completed"
+                cell.sessionsCompletedLabel.textColor = .systemGreen
+            }
         }
         if myCouse.downArrow {
             let firstValue = Float(myCouse.sessionData?.completedSessions ?? 0)
@@ -176,7 +219,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
             }
             if myCouse.downArrow {
                 let firstValue = Float(myCouse.sessionData?.attendedSessions ?? 0)
-                let lastValue = Float(myCouse.sessionData?.completedSessions ?? 0)
+                let totalValue = Float(myCouse.sessionData?.completedSessions ?? 0)
                 if  totalValue > 0 {
                     let progress = firstValue / totalValue
                     cell.forCircularView(setprogres: progress)
@@ -227,27 +270,31 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
          } */
         //  let myCouseBelowData = viewModel.myCourseBelowData
     }
-    @objc func downAroowButton(sender: UIButton) {
+    @objc func downArrowButton(sender: UIButton) {
         let btnPos = sender.convert(CGPoint.zero, to: myCourseTableView)
         guard let indexPath = myCourseTableView.indexPathForRow(at: btnPos) else {
             return }
         
-        if viewModel.dataCourseListModel[indexPath.row].downArrow {
-            viewModel.dataCourseListModel[indexPath.row].downArrow = false
+        let cellData = viewModel.dataCourseListModel[indexPath.row]
+        
+        if cellData.downArrow {
+            if let index = viewModel.indexOf(course: cellData ) {
+                viewModel.courseData[index].downArrow = false
+            }
         } else {
-            viewModel.dataCourseListModel[indexPath.row].downArrow = true
-            viewModel.showIndicator = {
+            self.viewModel.showIndicator = {
                 self.activityIndicator.showActivityIndicator(uiView: self.view)
             }
-        }
-        
-        if  viewModel.dataCourseListModel[indexPath.row].downArrow {
-            let courseModel = viewModel.dataCourseListModel[indexPath.row]
-            viewModel.forApiIntegration(course: courseModel,id: courseModel.id ?? "", institutionCalendarId: courseModel.institutionCalendarID ?? "", courseType: courseModel.courseType ?? "", level: courseModel.level ?? "", term: courseModel.term ?? "",rotation: courseModel.rotation ?? "",rotationCount: courseModel.rotationCount ?? 0){
+            viewModel.forApiIntegration(course: cellData){
                 self.activityIndicator.hideActivityIndicator()
+                if let index = self.viewModel.indexOf(course: cellData) {
+                    self.viewModel.courseData[index].downArrow = true
+                }
+                self.viewModel.filteredData(searchText: self.searchBar1.text ?? "")
                 self.myCourseTableView.reloadData()
             }
         }
+        self.viewModel.filteredData(searchText: self.searchBar1.text ?? "")
         myCourseTableView.reloadData()
     }
     
@@ -262,6 +309,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
     func DateFromWebtoApp(_ date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -286,6 +334,7 @@ extension ViewController: UISearchBarDelegate {
         searchBar1.isHidden = true
         searchButton.isHidden = false
         searchBar1.text = ""
+        viewModel.filteredData()
         searchBar.resignFirstResponder()
         searchBar1.isHidden = true
         myCourseTableView.reloadData()

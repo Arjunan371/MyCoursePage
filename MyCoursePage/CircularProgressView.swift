@@ -31,7 +31,7 @@ import UIKit
             progressLayer.lineCap = .round
             progressLayer.strokeEnd = 0
             remainingLayer.path = circularPath.cgPath
-            remainingLayer.strokeColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.12).cgColor // Remaining color
+            remainingLayer.strokeColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.06).cgColor // Remaining color
             remainingLayer.lineWidth = 5
             remainingLayer.fillColor = UIColor.clear.cgColor
             remainingLayer.lineCap = .round

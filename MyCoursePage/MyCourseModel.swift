@@ -14,9 +14,9 @@ import Foundation
 
 // MARK: - Datum
 struct Welcome: Codable {
-    let statusCode: Int
-    let status: Bool
-    let message: String
+    let statusCode: Int?
+    let status: Bool?
+    let message: String?
     let data: [Datum]
     enum CodingKeys: String, CodingKey {
         case statusCode = "status_code"

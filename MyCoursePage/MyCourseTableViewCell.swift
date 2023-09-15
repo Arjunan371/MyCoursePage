@@ -1,15 +1,9 @@
-//
-//  MyCourseTableViewCell.swift
-//  MyCoursePage
-//
-//  Created by Arjunan on 08/09/23.
-//
 
 import UIKit
 
 class MyCourseTableViewCell: UITableViewCell {
-
-  let viewModel = MyCourseVieModel()
+    
+    let viewModel = MyCourseVieModel()
     @IBOutlet weak var downArrow: UIButton!
     @IBOutlet weak var circularViewLabel: UILabel!
     @IBOutlet weak var view3: UIView!
@@ -26,11 +20,11 @@ class MyCourseTableViewCell: UITableViewCell {
     @IBOutlet weak var attendanceDetailLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var topicLabel: UILabel!
+  var ViewControllers = ViewController()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         forCardStyleShadow()
-    //    forCircularView()
         warningButton.layer.cornerRadius = 15
         warningButton.layer.borderColor = CGColor(red: 1, green: 0.757, blue: 0.133, alpha: 1)
         warningButton.layer.borderWidth = 1
@@ -38,12 +32,11 @@ class MyCourseTableViewCell: UITableViewCell {
         progressView.clipsToBounds = true
         progressView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.06)
         contentView.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
-    
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -65,21 +58,18 @@ class MyCourseTableViewCell: UITableViewCell {
     func forCardStyleShadow(){
         view1.layer.cornerRadius = 10
         customView.layer.cornerRadius = 10
-
-
     }
     func forCircularView(setprogres: Float = 0) {
         circularView.backgroundColor = UIColor.clear
-       let circularViews = CircularProgressView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
-                circularView.addSubview(circularViews)
-                // Update the progress (0.0 to 1.0)
-
+        let circularViews = CircularProgressView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        circularView.addSubview(circularViews)
+        // Update the progress (0.0 to 1.0)
         circularViews.setProgress(setprogres)
     }
     
 }
 extension UIView {
-   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
