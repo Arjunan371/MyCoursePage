@@ -1,29 +1,32 @@
-
 import Foundation
 
 class MyCourseVieModel {
     var courseData: [Datum] = []
-    var academicData:[AcademicData] = loadAcademicData()?.data ?? []
+    var academicData:[AcademicData] = []
     var dataCourseListModel: [Datum] = []
     var myCourseBelowData: BelowModelData?
     var showIndicator: (() -> ())?
     var showAcademicDataIndicator: (() -> ())?
     var filterButtonIndex = 4
+
+    //  var buttonTitles: [String] = ["Today","Lecture","Event","Support Session","All"]
+    // loadAcademicData()?.data ??
     //    var topic:[String] = ["Course Code - Course 1","Course Code - Course 1","Course Code - Course 1"]
     //    var date:[String] = ["Level 3 / Jan 5, 2021 - Feb 26, 2021","Level 3 / Jan 5, 2021 - Feb 26, 2021","Level 3 / Jan 5, 2021 - Feb 26, 2021"]
-    //    var attendanceDetails:[String] = ["Attendance Details","Attendance Details","Attendance Details"]
-    //    var leave:[String] = ["02 Leave • 03 Absent","02 Leave • 03 Absent","02 Leave • 03 Absent"]
-    //    var sessionsComplete:[String] = ["00/ 52 Sessions Completed","52/ 52 Sessions Completed","40/ 52 Sessions Completed"]
-    //    var progress:[String] = ["Completed","Completed","Completed"]
-    //    var sessionsAttend:[String] = ["00/ 52 Sessions Attended","40/ 52 Sessions Attended","52/ 52 Sessions Attended"]
-    //    var completed:[String] = ["completed","completed","completed"]
-    //    func forAppendDataInModel() {
-    //        for i in 0..<topic.count {
-    //            let courseData = MyCourseData(topic: topic[i], date: date[i], attendanceDetails: attendanceDetails[i], leave: leave[i], sessionsComplete: sessionsComplete[i], progress: progress[i], sessionsAttend: sessionsAttend[i], completed: completed[i])
-    //            myCourseModel.append(courseData)
-    //        }
-    //        print(myCourseModel)
-    //    }
+//        var attendanceDetails:[String] = ["L1 - Unit1 - Unit title Introduction To","L2 - Unit1 - Unit title Introduction Tos","L3 - Unit1 - Unit title Introduction To the swiftUI"]
+//        var leave:[String] = ["MG-1(L1)","MG-1(L1)","MG-1(L1)"]
+//        var sessionsComplete:[String] = ["Engineering chemistry . remote .Teams 2nd year","Engineering chemistry . onsite .Ahmed","Engineering chemistry . remote .abu zoom"]
+//        var progress:[String] = ["Completed","Completed","Completed"]
+//        var sessionsAttend:[String] = ["20 Dec 2025, 3.15 pm - 3.30 pm","20 Dec 2022, 3.15 pm - 3.30 pm","20 Dec 2022, 3.15 pm - 3.30 pm"]
+//        var completed:[String] = ["absent","absent","absent"]
+//        func forAppendDataInModel() {
+//            for i in 0..<leave.count {
+//                let courseData = MyCourseData( attendanceDetails: attendanceDetails[i], leave: leave[i], sessionsComplete: sessionsComplete[i], progress: progress[i],sessionsAttend: sessionsAttend[i],completed: completed[i])
+//                myCourseModel.append(courseData)
+//            }
+//            print(myCourseModel)
+//        }
+    
     
     func forFilterButtonIndex(){
     //    dataCourseListModel.removeAll()
@@ -94,11 +97,12 @@ class MyCourseVieModel {
         let orginalURL = "https://ecs-dsapi-staging.digivalitsolutions.com/api/v1/digiclass/course_session/userCourses/61a61789b1723a7f23346f70?institutionCalendarId=\(academicModel?.id ?? "6390b1f6b6505c97e1be9337")&type=student"
         
         guard let url = URL(string: orginalURL.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "") else {return}
+        print("url==>",url)
         showAcademicDataIndicator?()
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NDc1NDIxNywiZXhwIjoxNjk0NzkwMjE3fQ.xb37K4rcFPglYQNFOch6nyBKKGm8x2KpEBapnsj3ZGI"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTg3NzE1MiwiZXhwIjoxNjk1OTEzMTUyfQ.Ttw9X6Pivhc9BxdrJoiUP_KDErbS18ZFAiUrMEm-cQQ"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -109,6 +113,7 @@ class MyCourseVieModel {
                    let jasonvalue = try? decoder.decode(Welcome.self, from: getdata)
                     if let datas = jasonvalue {
                         self.courseData = datas.data
+                       
                     }
                         DispatchQueue.main.async {
                             completion?()
@@ -133,7 +138,7 @@ class MyCourseVieModel {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NDc1NDIxNywiZXhwIjoxNjk0NzkwMjE3fQ.xb37K4rcFPglYQNFOch6nyBKKGm8x2KpEBapnsj3ZGI"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTg3NzE1MiwiZXhwIjoxNjk1OTEzMTUyfQ.Ttw9X6Pivhc9BxdrJoiUP_KDErbS18ZFAiUrMEm-cQQ"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -149,6 +154,41 @@ class MyCourseVieModel {
                             completion?()
                         }
                     }
+                } catch{
+                    print("thanks for giving the error")
+                }
+            }
+        }
+        dataTask.resume()
+    }
+    
+    func academicYearApiIntegration(completion: (() -> Void)? = nil){
+        let orginalURL = "https://ecs-dsapi-staging.digivalitsolutions.com/api/v1/institution_calendar/calendars"
+        
+        guard let url = URL(string: orginalURL.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "") else {return}
+        showAcademicDataIndicator?()
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = [
+            "_user_id": "61a61789b1723a7f23346f70",
+            "_institution_id": "5e5d0f1a15b4d600173d5692",
+            "Content-Type": "application/json; charset=utf-8",
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTg3NzE1MiwiZXhwIjoxNjk1OTEzMTUyfQ.Ttw9X6Pivhc9BxdrJoiUP_KDErbS18ZFAiUrMEm-cQQ"
+        ]
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request) {(data,response,error) in
+            if error == nil {
+                do{
+                    let decoder = JSONDecoder()
+                    guard let getdata = data else {return}
+                   let jasonvalue = try? decoder.decode(AcademicModel.self, from: getdata)
+                    if let datas = jasonvalue {
+                        self.academicData = datas.data
+                    }
+                    print("academicData===>", self.academicData)
+                        DispatchQueue.main.async {
+                            completion?()
+                        }
                 } catch{
                     print("thanks for giving the error")
                 }
@@ -466,68 +506,68 @@ extension MyCourseVieModel {
 //        return nil
 //    }
     
-    static func loadAcademicData() -> AcademicModel? {
-        let decoder = JSONDecoder()
-        let jsonString = """
-{
-    "message": "institution_calendar list",
-    "status": 1,
-    "status_code": 200,
-    "data": [
-        
-        {
-            "_id": "6390b1f6b6505c97e1be9337",
-            "calendar_name": "2025-2026",
-            "end_date": "2026-05-28T00:00:00.000Z",
-            "start_date": "2025-06-08T00:00:00.000Z"
-        },
-        {
-            "_id": "6390af75b6505c8813be8db7",
-            "calendar_name": "2024-2025",
-            "end_date": "2025-05-29T00:00:00.000Z",
-            "start_date": "2024-06-09T00:00:00.000Z"
-        },
-        {
-            "_id": "6390a89cb6505c5cc5be7eff",
-            "calendar_name": "2023-2024",
-            "end_date": "2024-05-30T00:00:00.000Z",
-            "start_date": "2023-06-04T00:00:00.000Z"
-        },
-        {
-            "_id": "629c8a192027d0b0f037b362",
-            "calendar_name": "2022-2023",
-            "end_date": "2023-06-05T00:00:00.000Z",
-            "start_date": "2022-06-05T00:00:00.000Z"
-        },
-        {
-            "_id": "60d05e6d8ff3991b21c9bc2c",
-            "calendar_name": "2021-2022",
-            "end_date": "2022-05-26T00:00:00.000Z",
-            "start_date": "2021-06-20T00:00:00.000Z"
-        }
-    ]
-
-}
-"""
-        
-        let jsonData = Data(jsonString.utf8)
-        do {
-            let response = try decoder.decode(AcademicModel.self, from: jsonData)
-            
-            return response
-        } catch DecodingError.keyNotFound(let key, let context) {
-            Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
-        } catch DecodingError.valueNotFound(let type, let context) {
-            Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
-        } catch DecodingError.typeMismatch(let type, let context) {
-            Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
-        } catch DecodingError.dataCorrupted(let context) {
-            Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
-        } catch let error as NSError {
-            NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
-        }
-        return nil
-    }
+//    static func loadAcademicData() -> AcademicModel? {
+//        let decoder = JSONDecoder()
+//        let jsonString = """
+//{
+//    "message": "institution_calendar list",
+//    "status": 1,
+//    "status_code": 200,
+//    "data": [
+//
+//        {
+//            "_id": "6390b1f6b6505c97e1be9337",
+//            "calendar_name": "2025-2026",
+//            "end_date": "2026-05-28T00:00:00.000Z",
+//            "start_date": "2025-06-08T00:00:00.000Z"
+//        },
+//        {
+//            "_id": "6390af75b6505c8813be8db7",
+//            "calendar_name": "2024-2025",
+//            "end_date": "2025-05-29T00:00:00.000Z",
+//            "start_date": "2024-06-09T00:00:00.000Z"
+//        },
+//        {
+//            "_id": "6390a89cb6505c5cc5be7eff",
+//            "calendar_name": "2023-2024",
+//            "end_date": "2024-05-30T00:00:00.000Z",
+//            "start_date": "2023-06-04T00:00:00.000Z"
+//        },
+//        {
+//            "_id": "629c8a192027d0b0f037b362",
+//            "calendar_name": "2022-2023",
+//            "end_date": "2023-06-05T00:00:00.000Z",
+//            "start_date": "2022-06-05T00:00:00.000Z"
+//        },
+//        {
+//            "_id": "60d05e6d8ff3991b21c9bc2c",
+//            "calendar_name": "2021-2022",
+//            "end_date": "2022-05-26T00:00:00.000Z",
+//            "start_date": "2021-06-20T00:00:00.000Z"
+//        }
+//    ]
+//
+//}
+//"""
+//
+//        let jsonData = Data(jsonString.utf8)
+//        do {
+//            let response = try decoder.decode(AcademicModel.self, from: jsonData)
+//
+//            return response
+//        } catch DecodingError.keyNotFound(let key, let context) {
+//            Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
+//        } catch DecodingError.valueNotFound(let type, let context) {
+//            Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
+//        } catch DecodingError.typeMismatch(let type, let context) {
+//            Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
+//        } catch DecodingError.dataCorrupted(let context) {
+//            Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
+//        } catch let error as NSError {
+//            NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
+//        }
+//        return nil
+//    }
 }
 extension Date {
 

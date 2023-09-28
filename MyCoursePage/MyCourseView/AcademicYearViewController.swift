@@ -1,10 +1,3 @@
-//
-//  AcademicYearViewController.swift
-//  MyCoursePage
-//
-//  Created by Arjunan on 11/09/23.
-//
-
 import UIKit
 
 class AcademicYearViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -16,6 +9,9 @@ class AcademicYearViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.academicYearApiIntegration(){
+            self.academicTableView.reloadData()
+        }
         backgroundView.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
         academicTableView.backgroundColor =  UIColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
         academicTableView.register(UINib(nibName: "AcademicTableViewCell", bundle: nil), forCellReuseIdentifier: "AcademicTableViewCell")

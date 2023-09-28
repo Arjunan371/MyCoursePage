@@ -1,14 +1,8 @@
-//
-//  ViewController.swift
-//  MyCoursePage
-//
-//  Created by Arjunan on 08/09/23.
-//
-
 import UIKit
 
 class ViewController: UIViewController{
     
+    @IBOutlet weak var searchBar1: UISearchBar!
     @IBOutlet weak var academicYearLabel: UILabel!
     @IBOutlet weak var myCourseLabel: UILabel!
     @IBOutlet weak var firstView: UIView!
@@ -22,29 +16,20 @@ class ViewController: UIViewController{
     let viewModel = MyCourseVieModel()
     public var activityIndicator = ActivityIndicator()
     @IBOutlet weak var myCourseTableView: UITableView!
-    
-    var searchBar1: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.placeholder = "Search..."
-        searchBar.sizeToFit()
-        searchBar.searchTextField.backgroundColor = .white.withAlphaComponent(0.5)
-        searchBar.searchBarStyle = .minimal
-        searchBar.backgroundColor = .clear
-        searchBar.tintColor = .white
-        searchBar.showsCancelButton = true
-        searchBar.isUserInteractionEnabled = true
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        return searchBar
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar1.isHidden = true
         allButton.tintColor = .systemBlue
         print("currentDate",Date.getCurrentDate())
         academicYearLabel.text = "Academic Year: 2025 - 2026"
+        viewModel.showAcademicDataIndicator = {
+            self.activityIndicator.showActivityIndicator(uiView: self.view)
+        }
         viewModel.forInitialApiIntegration(){
             self.viewModel.filteredData()
             self.myCourseTableView.reloadData()
+            self.activityIndicator.hideActivityIndicator()
         }
         view.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
         myCourseTableView.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
@@ -57,16 +42,6 @@ class ViewController: UIViewController{
         myCourseTableView.register(UINib(nibName: "MyCourseTableViewCell", bundle: nil), forCellReuseIdentifier: "MyCourseTableViewCell")
         myCourseTableView.delegate = self
         myCourseTableView.dataSource = self
-    }
-    
-    func constraintForSearchBar() {
-        view.addSubview(searchBar1)
-        NSLayoutConstraint.activate([
-            searchBar1.topAnchor.constraint(equalTo: searchButton.topAnchor),
-            searchBar1.leadingAnchor.constraint(equalTo: menuButton.trailingAnchor,constant: 5),
-            searchBar1.trailingAnchor.constraint(equalTo: searchButton.leadingAnchor,constant: -5),
-            searchBar1.bottomAnchor.constraint(equalTo: searchButton.bottomAnchor),
-        ])
     }
     
     func forCornerRadius() {
@@ -152,7 +127,12 @@ class ViewController: UIViewController{
     }
     
     @IBAction func searchAction(_ sender: UIButton) {
-        constraintForSearchBar()
+        searchBar1.searchTextField.backgroundColor = .white.withAlphaComponent(0.5)
+                searchBar1.searchBarStyle = .minimal
+                searchBar1.backgroundColor = .clear
+                searchBar1.tintColor = .white
+                searchBar1.showsCancelButton = true
+                searchBar1.isUserInteractionEnabled = true
         viewModel.filteredData()
         myCourseLabel.isHidden = true
         searchBar1.isHidden = false
@@ -270,6 +250,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
          } */
         //  let myCouseBelowData = viewModel.myCourseBelowData
     }
+    
     @objc func downArrowButton(sender: UIButton) {
         let btnPos = sender.convert(CGPoint.zero, to: myCourseTableView)
         guard let indexPath = myCourseTableView.indexPathForRow(at: btnPos) else {
@@ -296,6 +277,13 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
         }
         self.viewModel.filteredData(searchText: self.searchBar1.text ?? "")
         myCourseTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MySessionsTabBarController") as! MySessionsTabBarController
+        let model = viewModel.courseData[indexPath.row]
+        vc.myCourseModel = model
+        present(vc, animated: true)
     }
     
     func roundToSingleDecimalDigit(_ floatValue: Float) -> Float {

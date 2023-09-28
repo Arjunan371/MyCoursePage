@@ -38,6 +38,7 @@ class MyCourseTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         warningButton.backgroundColor = UIColor(red: 1, green: 0.946, blue: 0.754, alpha: 1)
@@ -46,8 +47,8 @@ class MyCourseTableViewCell: UITableViewCell {
         customView.layer.shadowOffset = CGSize(width: -1, height: 1)
         customView.layer.shadowRadius = 3
         customView.layer.shadowOpacity = 0.1
-        
     }
+    
     func constraintForProgressView() {
         NSLayoutConstraint.activate([
             progressView.topAnchor.constraint(equalTo: circularView.topAnchor),

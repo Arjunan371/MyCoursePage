@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F7453082ABB18F6006E6E52 /* MySessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7453072ABB18F6006E6E52 /* MySessionModel.swift */; };
+		9F74530A2ABB191A006E6E52 /* MySessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7453092ABB191A006E6E52 /* MySessionViewModel.swift */; };
 		9F77D33A2AB075DC00EE9513 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */; };
+		9F78ECF32AB9A1EB0056D07C /* MyCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78ECF12AB9A1EB0056D07C /* MyCourseCollectionViewCell.swift */; };
+		9F78ECF42AB9A1EB0056D07C /* MyCourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F78ECF22AB9A1EB0056D07C /* MyCourseCollectionViewCell.xib */; };
 		9F8A061E2AAAF12600D3AF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A061D2AAAF12600D3AF34 /* AppDelegate.swift */; };
 		9F8A06202AAAF12600D3AF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A061F2AAAF12600D3AF34 /* SceneDelegate.swift */; };
 		9F8A06222AAAF12600D3AF34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06212AAAF12600D3AF34 /* ViewController.swift */; };
@@ -22,6 +26,10 @@
 		9F8A06522AAB02C100D3AF34 /* MyCourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06512AAB02C100D3AF34 /* MyCourseModel.swift */; };
 		9F8A06542AAB02F600D3AF34 /* MyCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06532AAB02F600D3AF34 /* MyCourseViewModel.swift */; };
 		9F8A06562AAB330500D3AF34 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */; };
+		9FD929FA2AB9A6200043322B /* MySessionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD929F82AB9A6200043322B /* MySessionsTableViewCell.swift */; };
+		9FD929FB2AB9A6200043322B /* MySessionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD929F92AB9A6200043322B /* MySessionsTableViewCell.xib */; };
+		9FD929FD2AB9A9B80043322B /* MySessionsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD929FC2AB9A9B80043322B /* MySessionsTabBarController.swift */; };
+		9FD929FF2AB9AFAB0043322B /* MySessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD929FE2AB9AFAB0043322B /* MySessionsViewController.swift */; };
 		9FE2306B2AAF43320008B489 /* AcademicYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2306A2AAF43320008B489 /* AcademicYearViewController.swift */; };
 		9FE2306E2AAF468C0008B489 /* AcademicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2306C2AAF468C0008B489 /* AcademicTableViewCell.swift */; };
 		9FE2306F2AAF468C0008B489 /* AcademicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE2306D2AAF468C0008B489 /* AcademicTableViewCell.xib */; };
@@ -45,7 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F7453072ABB18F6006E6E52 /* MySessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionModel.swift; sourceTree = "<group>"; };
+		9F7453092ABB191A006E6E52 /* MySessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionViewModel.swift; sourceTree = "<group>"; };
 		9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		9F78ECF12AB9A1EB0056D07C /* MyCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseCollectionViewCell.swift; sourceTree = "<group>"; };
+		9F78ECF22AB9A1EB0056D07C /* MyCourseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCourseCollectionViewCell.xib; sourceTree = "<group>"; };
 		9F8A061A2AAAF12600D3AF34 /* MyCoursePage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCoursePage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8A061D2AAAF12600D3AF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8A061F2AAAF12600D3AF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +76,10 @@
 		9F8A06512AAB02C100D3AF34 /* MyCourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseModel.swift; sourceTree = "<group>"; };
 		9F8A06532AAB02F600D3AF34 /* MyCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseViewModel.swift; sourceTree = "<group>"; };
 		9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		9FD929F82AB9A6200043322B /* MySessionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionsTableViewCell.swift; sourceTree = "<group>"; };
+		9FD929F92AB9A6200043322B /* MySessionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySessionsTableViewCell.xib; sourceTree = "<group>"; };
+		9FD929FC2AB9A9B80043322B /* MySessionsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionsTabBarController.swift; sourceTree = "<group>"; };
+		9FD929FE2AB9AFAB0043322B /* MySessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionsViewController.swift; sourceTree = "<group>"; };
 		9FE2306A2AAF43320008B489 /* AcademicYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicYearViewController.swift; sourceTree = "<group>"; };
 		9FE2306C2AAF468C0008B489 /* AcademicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicTableViewCell.swift; sourceTree = "<group>"; };
 		9FE2306D2AAF468C0008B489 /* AcademicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcademicTableViewCell.xib; sourceTree = "<group>"; };
@@ -94,6 +110,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F7453062ABB183F006E6E52 /* MySessionView */ = {
+			isa = PBXGroup;
+			children = (
+				9FD929FC2AB9A9B80043322B /* MySessionsTabBarController.swift */,
+				9FD929FE2AB9AFAB0043322B /* MySessionsViewController.swift */,
+				9F7453072ABB18F6006E6E52 /* MySessionModel.swift */,
+				9F7453092ABB191A006E6E52 /* MySessionViewModel.swift */,
+			);
+			path = MySessionView;
+			sourceTree = "<group>";
+		};
+		9F74530B2ABB1930006E6E52 /* MyCourseView */ = {
+			isa = PBXGroup;
+			children = (
+				9F8A06212AAAF12600D3AF34 /* ViewController.swift */,
+				9FE2306A2AAF43320008B489 /* AcademicYearViewController.swift */,
+				9F8A06532AAB02F600D3AF34 /* MyCourseViewModel.swift */,
+				9F8A06512AAB02C100D3AF34 /* MyCourseModel.swift */,
+			);
+			path = MyCourseView;
+			sourceTree = "<group>";
+		};
 		9F8A06112AAAF12600D3AF34 = {
 			isa = PBXGroup;
 			children = (
@@ -119,16 +157,14 @@
 			children = (
 				9F8A061D2AAAF12600D3AF34 /* AppDelegate.swift */,
 				9F8A061F2AAAF12600D3AF34 /* SceneDelegate.swift */,
-				9F8A06212AAAF12600D3AF34 /* ViewController.swift */,
-				9F8A06512AAB02C100D3AF34 /* MyCourseModel.swift */,
-				9F8A06532AAB02F600D3AF34 /* MyCourseViewModel.swift */,
-				9F8A064D2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift */,
-				9FE2306A2AAF43320008B489 /* AcademicYearViewController.swift */,
-				9FE2306C2AAF468C0008B489 /* AcademicTableViewCell.swift */,
-				9FE2306D2AAF468C0008B489 /* AcademicTableViewCell.xib */,
+				9F74530B2ABB1930006E6E52 /* MyCourseView */,
+				9F7453062ABB183F006E6E52 /* MySessionView */,
 				9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */,
 				9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */,
-				9F8A064E2AAAF7C000D3AF34 /* MyCourseTableViewCell.xib */,
+				9FD92A032AB9B96B0043322B /* AcademicTableView */,
+				9FD92A022AB9B93D0043322B /* MyCourseTableView */,
+				9FD92A012AB9B9040043322B /* MyCourseCollectionViewCell */,
+				9FD92A002AB9B8DA0043322B /* MySessionsTableView */,
 				9F8A06232AAAF12600D3AF34 /* Main.storyboard */,
 				9F8A06262AAAF12700D3AF34 /* Assets.xcassets */,
 				9F8A06282AAAF12700D3AF34 /* LaunchScreen.storyboard */,
@@ -152,6 +188,42 @@
 				9F8A06402AAAF12800D3AF34 /* MyCoursePageUITestsLaunchTests.swift */,
 			);
 			path = MyCoursePageUITests;
+			sourceTree = "<group>";
+		};
+		9FD92A002AB9B8DA0043322B /* MySessionsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				9FD929F92AB9A6200043322B /* MySessionsTableViewCell.xib */,
+				9FD929F82AB9A6200043322B /* MySessionsTableViewCell.swift */,
+			);
+			path = MySessionsTableView;
+			sourceTree = "<group>";
+		};
+		9FD92A012AB9B9040043322B /* MyCourseCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F78ECF12AB9A1EB0056D07C /* MyCourseCollectionViewCell.swift */,
+				9F78ECF22AB9A1EB0056D07C /* MyCourseCollectionViewCell.xib */,
+			);
+			path = MyCourseCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		9FD92A022AB9B93D0043322B /* MyCourseTableView */ = {
+			isa = PBXGroup;
+			children = (
+				9F8A064E2AAAF7C000D3AF34 /* MyCourseTableViewCell.xib */,
+				9F8A064D2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift */,
+			);
+			path = MyCourseTableView;
+			sourceTree = "<group>";
+		};
+		9FD92A032AB9B96B0043322B /* AcademicTableView */ = {
+			isa = PBXGroup;
+			children = (
+				9FE2306C2AAF468C0008B489 /* AcademicTableViewCell.swift */,
+				9FE2306D2AAF468C0008B489 /* AcademicTableViewCell.xib */,
+			);
+			path = AcademicTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +332,9 @@
 			files = (
 				9F8A06502AAAF7C000D3AF34 /* MyCourseTableViewCell.xib in Resources */,
 				9F8A062A2AAAF12700D3AF34 /* LaunchScreen.storyboard in Resources */,
+				9FD929FB2AB9A6200043322B /* MySessionsTableViewCell.xib in Resources */,
 				9FE2306F2AAF468C0008B489 /* AcademicTableViewCell.xib in Resources */,
+				9F78ECF42AB9A1EB0056D07C /* MyCourseCollectionViewCell.xib in Resources */,
 				9F8A06272AAAF12700D3AF34 /* Assets.xcassets in Resources */,
 				9F8A06252AAAF12600D3AF34 /* Main.storyboard in Resources */,
 			);
@@ -287,13 +361,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7453082ABB18F6006E6E52 /* MySessionModel.swift in Sources */,
 				9F8A064F2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift in Sources */,
 				9F8A06222AAAF12600D3AF34 /* ViewController.swift in Sources */,
 				9F8A061E2AAAF12600D3AF34 /* AppDelegate.swift in Sources */,
 				9F8A06522AAB02C100D3AF34 /* MyCourseModel.swift in Sources */,
+				9FD929FD2AB9A9B80043322B /* MySessionsTabBarController.swift in Sources */,
+				9FD929FF2AB9AFAB0043322B /* MySessionsViewController.swift in Sources */,
 				9FE2306B2AAF43320008B489 /* AcademicYearViewController.swift in Sources */,
+				9F78ECF32AB9A1EB0056D07C /* MyCourseCollectionViewCell.swift in Sources */,
+				9F74530A2ABB191A006E6E52 /* MySessionViewModel.swift in Sources */,
 				9F8A06202AAAF12600D3AF34 /* SceneDelegate.swift in Sources */,
 				9F77D33A2AB075DC00EE9513 /* ActivityIndicator.swift in Sources */,
+				9FD929FA2AB9A6200043322B /* MySessionsTableViewCell.swift in Sources */,
 				9F8A06542AAB02F600D3AF34 /* MyCourseViewModel.swift in Sources */,
 				9FE2306E2AAF468C0008B489 /* AcademicTableViewCell.swift in Sources */,
 				9F8A06562AAB330500D3AF34 /* CircularProgressView.swift in Sources */,

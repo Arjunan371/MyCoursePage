@@ -1,16 +1,15 @@
-
 import Foundation
 
-//struct MyCourseData {
+struct MyCourseData {
 //    let topic: String?
 //    let date: String?
-//    let attendanceDetails: String?
-//    let leave: String?
-//    let sessionsComplete: String?
-//    let progress: String?
-//    let sessionsAttend:String?
-//    let completed: String?
-//}
+    let attendanceDetails: String?
+    let leave: String?
+    let sessionsComplete: String?
+    let progress: String?
+    let sessionsAttend:String?
+    let completed: String?
+}
 
 // MARK: - Datum
 struct Welcome: Codable {
@@ -49,34 +48,10 @@ struct Datum: Codable {
     }
 }
 
-struct AcademicModel: Codable {
-    let message: String
-    let status, statusCode: Int
-    let data: [AcademicData]
-    
-    enum CodingKeys: String, CodingKey {
-        case message, status
-        case statusCode = "status_code"
-        case data
-    }
-}
-
-// MARK: - Datum
-struct AcademicData: Codable {
-    let id, calendarName, endDate, startDate: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case calendarName = "calendar_name"
-        case endDate = "end_date"
-        case startDate = "start_date"
-    }
-}
-
 struct BelowModel: Codable {
-    let statusCode: Int
-    let status: Bool
-    let message: String
+    let statusCode: Int?
+    let status: Bool?
+    let message: String?
     let data: BelowModelData?
     
     enum CodingKeys: String, CodingKey {
@@ -87,9 +62,37 @@ struct BelowModel: Codable {
 
 // MARK: - DataClass
 struct BelowModelData: Codable {
-    let absentCount, attendedSessions, leaveCount, permissionCount: Int
-    let ondutyCount, presentCount, completedSessions, totalSessions: Int
-    let warningData: String
-    
+    let absentCount, attendedSessions, leaveCount, permissionCount: Int?
+    let ondutyCount, presentCount, completedSessions, totalSessions: Int?
+    let warningData: String?
 }
+
+// MARK: - AcademicYear
+struct AcademicModel: Codable {
+    let statusCode: Int
+    let status: Bool
+    let message: String
+    let data: [AcademicData]
+
+    enum CodingKeys: String, CodingKey {
+        case statusCode = "status_code"
+        case status, message, data
+    }
+}
+
+// MARK: - AcademicYearData
+struct AcademicData: Codable {
+    let id, calendarName, startDate, endDate: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case calendarName = "calendar_name"
+        case startDate = "start_date"
+        case endDate = "end_date"
+    }
+}
+
+
+
+
 

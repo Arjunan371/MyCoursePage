@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  MyCoursePage
-//
-//  Created by Arjunan on 08/09/23.
-//
 
 import UIKit
 

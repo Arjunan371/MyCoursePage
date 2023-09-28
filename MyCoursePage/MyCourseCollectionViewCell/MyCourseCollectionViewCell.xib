@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="MyCourseCollectionViewCell" customModule="MyCoursePage" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qeb-yK-pdP">
+                        <rect key="frame" x="5" y="5" width="110" height="35"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIW-mW-RAk">
+                                <rect key="frame" x="8" y="0.0" width="94" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QIW-mW-RAk" firstAttribute="leading" secondItem="Qeb-yK-pdP" secondAttribute="leading" constant="8" id="Lgc-V2-dBJ"/>
+                            <constraint firstItem="QIW-mW-RAk" firstAttribute="top" secondItem="Qeb-yK-pdP" secondAttribute="top" id="jol-69-YNv"/>
+                            <constraint firstAttribute="trailing" secondItem="QIW-mW-RAk" secondAttribute="trailing" constant="8" id="md6-vF-HhT"/>
+                            <constraint firstAttribute="bottom" secondItem="QIW-mW-RAk" secondAttribute="bottom" id="wRX-dj-62x"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Qeb-yK-pdP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Vpj-Ul-GQq"/>
+                <constraint firstAttribute="bottom" secondItem="Qeb-yK-pdP" secondAttribute="bottom" constant="5" id="XKL-wR-9kn"/>
+                <constraint firstItem="Qeb-yK-pdP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="f4K-IQ-3sW"/>
+                <constraint firstAttribute="trailing" secondItem="Qeb-yK-pdP" secondAttribute="trailing" constant="5" id="lTB-hi-r3j"/>
+            </constraints>
+            <size key="customSize" width="111" height="52"/>
+            <connections>
+                <outlet property="customView" destination="Qeb-yK-pdP" id="Pvt-ks-tsI"/>
+                <outlet property="mySessionTopButtons" destination="QIW-mW-RAk" id="yPJ-UM-PG6"/>
+            </connections>
+            <point key="canvasLocation" x="-149.23076923076923" y="-19.549763033175356"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
