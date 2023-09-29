@@ -18,7 +18,7 @@ struct MySessionCollectionData: Codable {
     let name, type: String?
     let count: Int?
     var buttonSelected = false
-    
+
     enum CodingKeys: String, CodingKey {
         case  name, type
         case count

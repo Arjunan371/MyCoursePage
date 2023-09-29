@@ -2,6 +2,7 @@ import UIKit
 
 class MySessionsViewController: UIViewController {
     
+    @IBOutlet weak var warningImage: UIImageView!
     @IBOutlet weak var denialLabel: UILabel!
     @IBOutlet weak var denialView: UIView!
     @IBOutlet weak var warningView: UIView!
@@ -34,11 +35,12 @@ class MySessionsViewController: UIViewController {
         warningView.isHidden = true
         denialView.isHidden = true
         viewModel.forMySessionCollectionApi(course: courseModel){
+            self.viewModel.selectedTab = 1
             self.MySessionsCollectionView.reloadData()
             self.viewModel.showAcademicDataIndicator = {
                 self.activityIndica.showActivityIndicator(uiView: self.view)
             }
-            self.viewModel.forMySessionTableViewApi(SessionType: self.viewModel.mySessionCollectionData.first?.type ?? "Today",course: self.courseModel){ sessionModel in
+            self.viewModel.forMySessionTableViewApi(SessionType: self.viewModel.MySessionTableDatas.first?.schedules?.first?.type ?? "regular",course: self.courseModel){ sessionModel in
                 let sessionData = sessionModel.data?.first
                 self.courseTopicLabel.text = "\(self.courseModel?.programName ?? "")"
                 self.courseNameLabel.text = "\(self.courseModel?.courseName ?? "")"
@@ -46,30 +48,29 @@ class MySessionsViewController: UIViewController {
                 let totalValue = sessionData?.completedSessions ?? 0
                 self.attendanceLabel.text = "Attendace"
                 if totalValue > 0 {
-                    let progress = firstValue / totalValue
-                    let attendance = self.roundToSingleDecimalDigit(Float(progress * 100))
-                    self.progressLabel.text = "\(attendance)%"
+                    let progress = (Float(firstValue) / Float(totalValue))
+                    let attendance = self.roundToSingleDecimalDigit(progress * 100)
+                    self.progressLabel.text = "\(self.formatPercentage(attendance))%"
                     self.attendanceSessionsLabel.text = "\(firstValue)/\(totalValue) Sessions"
                 } else {
                     self.attendanceSessionsLabel.text = "00 / 00"
                     self.progressLabel.text = "-"
                 }
-                let leaveCount = self.doubleDigitString(from: sessionData?.leaveCount ?? 0)
-                let absentCount = self.doubleDigitString(from: sessionData?.absentCount ?? 0)
-                if Int(absentCount) ?? 0 > 0 {
-                    let percentage = Float((Float(leaveCount) ?? 0) / (Float(absentCount) ?? 0))
-                    
-                    self.warningLabel.text = "\(percentage * 100)"
-                }
                 let absentDetail = self.roundToSingleDecimalDigit(Float(sessionData?.absentPercentage ?? 0))
-                self.warningLabel.text = "\(absentDetail) %"
-                if absentDetail == 0{
-                    self.denialView.isHidden = true
-                    self.warningView.isHidden = true
-                } else {
+                self.warningLabel.text = "\(self.formatPercentage(absentDetail)) %"
+                if self.viewModel.mySessionCollectionData.first?.type == "all"{
                     self.denialView.isHidden = false
                     self.warningView.isHidden = false
-                    self.denialLabel.text = "Denial"
+                    self.denialLabel.text = sessionData?.warningData ?? ""
+                  
+                } else {
+                    self.denialView.isHidden = true
+                    self.warningView.isHidden = true
+                }
+                if self.denialLabel.text == "Denial"{
+                    self.warningImage.image = UIImage(named: "warning")
+                } else {
+                    self.warningImage.image = UIImage(named: "warning1")
                 }
                 self.MySessionsTableView.reloadData()
                 self.activityIndica.hideActivityIndicator()
@@ -97,14 +98,15 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCourseCollectionView", for: indexPath) as! MyCourseCollectionViewCell
         let buttonData = viewModel.mySessionCollectionData[indexPath.row]
         //        viewModel.forMySessionTableViewApi(SessionType: "\(buttonData.type ?? "")")
-        let buttonDetail = "\(buttonData.type ?? "")(\(buttonData.count ?? 0))"
+        let buttonDetail = "\(buttonData.name ?? "")(\(buttonData.count ?? 0))"
         cell.mySessionTopButtons.setTitle(buttonDetail, for: .normal)
         cell.mySessionTopButtons.addTarget(self, action: #selector(mySessionTopButtonAction), for: .touchUpInside)
         if viewModel.selectedTab == indexPath.item {
-            cell.mySessionTopButtons.tintColor = UIColor.systemBlue
+            cell.mySessionTopButtons.setTitleColor(UIColor.systemBlue, for: .normal)
             cell.customView.backgroundColor = .white
         } else {
             cell.customView.backgroundColor = .white.withAlphaComponent(0.5)
+            cell.mySessionTopButtons.setTitleColor(.black, for: .normal)
         }
         
         return cell
@@ -113,7 +115,6 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
         let btnPos = sender.convert(CGPoint.zero, to: MySessionsCollectionView)
         guard let indexPath = MySessionsCollectionView.indexPathForItem(at: btnPos) else {
             return }
-        
         let cellData = viewModel.mySessionCollectionData[indexPath.row]
         viewModel.showAcademicDataIndicator = { [self] in
             self.activityIndica.showActivityIndicator(uiView: view)
@@ -127,7 +128,7 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
             if totalValue > 0 {
                 let progress = firstValue / totalValue
                 let attendance = self.roundToSingleDecimalDigit((progress * 100))
-                self.progressLabel.text = "\(attendance)%"
+                self.progressLabel.text = "\(self.formatPercentage(attendance))%"
                 self.attendanceLabel.text = "Attendace"
                 self.attendanceSessionsLabel.text = "\(self.doubleDigitString(from: sessionData?.attendedSessions ?? 0)) / \(self.doubleDigitString(from:sessionData?.completedSessions ?? 0)) Sessions"
             } else {
@@ -136,18 +137,25 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
             }
 
             let absentDetail = self.roundToSingleDecimalDigit(Float(sessionData?.absentPercentage ?? 0))
-            self.warningLabel.text = "\(absentDetail) %"
-            if absentDetail == 0{
-                self.denialView.isHidden = true
-                self.warningView.isHidden = true
-            } else {
+            self.warningLabel.text = "\(self.formatPercentage(absentDetail)) %"
+            if self.viewModel.mySessionCollectionData[indexPath.row].type == "all"{
                 self.denialView.isHidden = false
                 self.warningView.isHidden = false
-                self.denialLabel.text = "Denial"
+                self.denialLabel.text = sessionData?.warningData ?? ""
+            } else {
+                self.denialView.isHidden = true
+                self.warningView.isHidden = true
+
+            }
+            if self.denialLabel.text == "Denial"{
+                self.warningImage.image = UIImage(named: "warning")
+            } else {
+                self.warningImage.image = UIImage(named: "warning1")
             }
             self.MySessionsTableView.reloadData()
             self.activityIndica.hideActivityIndicator()
         }
+
         viewModel.selectedTab = indexPath.item
         MySessionsCollectionView.reloadData()
         
@@ -190,27 +198,15 @@ extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
         var studentGroups = ""
         for index in 0..<(myCourseData.schedules?.first?.studentGroups?.count ?? 0) {
             if myCourseData.schedules?.first?.type == "regular" {
-                studentGroups += "\((myCourseData.schedules?.first?.studentGroups?[index].groupName ?? "").suffix(3))(\((myCourseData.schedules?.first?.studentGroups?[index].sessionGroup?.first?.groupName ?? "").suffix(3)))"
+                studentGroups += "\((myCourseData.schedules?.first?.studentGroups?[index].groupName ?? "").suffix(4))(\((myCourseData.schedules?.first?.studentGroups?[index].sessionGroup?.first?.groupName ?? "").suffix(3)))"
             } else {
                 studentGroups += "\((myCourseData.schedules?.first?.studentGroups?[index].groupName ?? ""))"
             }
         }
-        print("studentGroups==>", studentGroups)
-        
         cell.levelLabel.text = studentGroups
         
         cell.leaveLabel.text = "\(myCourseData.schedules?.first?.courseName ?? ""). \(myCourseData.schedules?.first?.mode?.rawValue ?? "")"
         cell.timeLabel.text = " \(DateFromWebtoApp(myCourseData.schedules?.first?.scheduleDate ?? "") ), \(myCourseData.schedules?.first?.start?.hour ?? 0):\(myCourseData.schedules?.first?.start?.minute ?? 0) \(myCourseData.schedules?.first?.start?.format?.rawValue ?? "") - \(myCourseData.schedules?.first?.end?.hour ?? 0):\(myCourseData.schedules?.first?.end?.minute ?? 0) \(myCourseData.schedules?.first?.end?.format?.rawValue ?? "")"
-        //  cell.absentLabel.text = "\(myCourseData.schedules?.first?.students?.first?.status?.rawValue ?? "")"
-        //        if cell.absentLabel.text == "completed"{
-        //            cell.absentLabel.isHidden = true
-        //            cell.customView.backgroundColor = .white
-        //        } else if cell.absentLabel.text == "absent" {
-        //            cell.customView.backgroundColor = .systemYellow
-        //        } else {
-        //            cell.customView.backgroundColor = .white
-        //        }
-   
         return cell
     }
     
@@ -226,4 +222,25 @@ extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
         return  dateFormatter.string(from: date!)
     }
     
+    func forSessonType(_ IntValue: Int) -> String {
+        if viewModel.mySessionCollectionData.first?.count == 0 {
+            // If there are no decimal places, convert to Int
+            let intValue = self.viewModel.MySessionTableDatas.first?.schedules?.first?.type ?? "regular"
+            return "\(intValue)"
+        } else {
+            // If there are decimal places, keep as Float
+            return "\(viewModel.mySessionCollectionData.first?.type)"
+        }
+    }
+    
+    func formatPercentage(_ floatValue: Float) -> String {
+        if floatValue.truncatingRemainder(dividingBy: 1) == 0 {
+            // If there are no decimal places, convert to Int
+            let intValue = Int(floatValue)
+            return "\(intValue)"
+        } else {
+            // If there are decimal places, keep as Float
+            return "\(floatValue)"
+        }
+    }
 }

@@ -409,8 +409,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "forMySessionTableViewApi(SessionType:course:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -425,8 +425,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "forMySessionTableViewApi(SessionType:course:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -441,8 +441,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "forMySessionTableViewApi(SessionType:course:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -457,8 +457,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "forMySessionCollectionApi(course:completion:)"
             landmarkType = "7">
             <Locations>
@@ -505,8 +505,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "forMySessionCollectionApi(course:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -521,8 +521,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "forMySessionCollectionApi(course:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -537,8 +537,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "forMySessionTableViewApi(SessionType:course:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -553,8 +553,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -569,8 +569,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "forMySessionCollectionApi(course:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -585,8 +585,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "forMySessionTableViewApi(SessionType:course:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -601,8 +601,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "mySessionTopButtonAction(sender:)"
             landmarkType = "7">
             <Locations>
@@ -649,8 +649,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -658,32 +658,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "639AD6FD-1D55-46B9-93AB-C16A0F9D8707"
+            uuid = "6CEE081F-3F76-4DB8-9795-1F753851A536"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2932701-7111-4750-8795-8C704D12F2F0"
+            uuid = "6ED58CFB-2EA2-4D81-9B6C-296D83709CE6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCoursePage/MySessionsTableView/MySessionsTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "forAbsentLabel(model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "33D986A4-0CE5-42C7-9D81-0500416A5039"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCoursePage/MySessionsTableView/MySessionsTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "forAbsentLabel(model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A3B24CB-8DDE-4B54-8B57-94815FAFEFE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -102,7 +102,7 @@ class MyCourseVieModel {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTg3NzE1MiwiZXhwIjoxNjk1OTEzMTUyfQ.Ttw9X6Pivhc9BxdrJoiUP_KDErbS18ZFAiUrMEm-cQQ"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTk2MzkzMywiZXhwIjoxNjk1OTk5OTMzfQ.1ozm50unUls678ylGCgfRuVysr7i5UHBjmIVI2HUhkE"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -138,7 +138,7 @@ class MyCourseVieModel {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTg3NzE1MiwiZXhwIjoxNjk1OTEzMTUyfQ.Ttw9X6Pivhc9BxdrJoiUP_KDErbS18ZFAiUrMEm-cQQ"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTk2MzkzMywiZXhwIjoxNjk1OTk5OTMzfQ.1ozm50unUls678ylGCgfRuVysr7i5UHBjmIVI2HUhkE"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -173,7 +173,7 @@ class MyCourseVieModel {
             "_user_id": "61a61789b1723a7f23346f70",
             "_institution_id": "5e5d0f1a15b4d600173d5692",
             "Content-Type": "application/json; charset=utf-8",
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTg3NzE1MiwiZXhwIjoxNjk1OTEzMTUyfQ.Ttw9X6Pivhc9BxdrJoiUP_KDErbS18ZFAiUrMEm-cQQ"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTk2MzkzMywiZXhwIjoxNjk1OTk5OTMzfQ.1ozm50unUls678ylGCgfRuVysr7i5UHBjmIVI2HUhkE"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in

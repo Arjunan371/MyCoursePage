@@ -15,7 +15,7 @@ class MyCourseCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
 
         customView.backgroundColor = .white.withAlphaComponent(0.5)
-        customView.layer.cornerRadius = 12
+        customView.layer.cornerRadius = 14
         
     }
     override func prepareForReuse() {

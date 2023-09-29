@@ -36,30 +36,21 @@ class MySessionsTableViewCell: UITableViewCell {
         switch model.status{
         case "missed":
             absentLabel.text = "Session Missed"
-            absentLabel.textColor = .black
-            customView.layer.backgroundColor = UIColor.white.withAlphaComponent(0.8).cgColor
-            print("")
+            absentLabel.textColor = UIColor.orange
+            customView.layer.backgroundColor = UIColor.white.withAlphaComponent(0.7).cgColor
         case "completed":
             if model.students?.first?.status?.rawValue ?? "" == "pending" || model.students?.first?.status?.rawValue ?? ""  == "absent" {
-                customView.layer.backgroundColor = CGColor(red: 243/255, green: 253/255, blue: 237/255, alpha: 1)
-             //   contentView.layer.backgroundColor = CGColor(red: 243/255, green: 254/255, blue: 237/255, alpha: 1)
                 absentLabel.text = "Absent"
                 absentLabel.textColor = .systemRed
-            } else if model.students?.first?.status?.rawValue ?? ""  == "present" {
+                customView.layer.backgroundColor = CGColor(red: 243/255, green: 254/255, blue: 237/255, alpha: 1)
+            } else if model.students?.first?.status?.rawValue ?? ""  == "present"{
                 absentLabel.text = "Present"
                 absentLabel.textColor = .systemGreen
                 customView.layer.backgroundColor = CGColor(red: 243/255, green: 254/255, blue: 237/255, alpha: 1)
-             //   contentView.layer.backgroundColor = CGColor(red: 243/255, green: 254/255, blue: 237/255, alpha: 1)
             }
-            print("")
-        case "ongoing":
-            absentLabel.text = "Ongoing"
-            absentLabel.textColor = .black
-            print("")
         default:
-            absentLabel.isHidden = true
-            customView.backgroundColor = .white
-            print("")
+                customView.backgroundColor = .white
+                absentLabel.isHidden = true
         }
         
     }

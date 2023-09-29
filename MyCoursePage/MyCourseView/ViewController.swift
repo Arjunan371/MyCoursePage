@@ -21,7 +21,6 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         searchBar1.isHidden = true
         allButton.tintColor = .systemBlue
-        print("currentDate",Date.getCurrentDate())
         academicYearLabel.text = "Academic Year: 2025 - 2026"
         viewModel.showAcademicDataIndicator = {
             self.activityIndicator.showActivityIndicator(uiView: self.view)
@@ -55,7 +54,6 @@ class ViewController: UIViewController{
     @IBAction func academicYearButton(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "academic") as? AcademicYearViewController
         vc?.didSelectAcadamicYear = { [self] (academicYear,academicModel) in
-            print(academicYear)
             self.academicYearLabel.text = "Academic Year: \(academicYear)"
             self.viewModel.forInitialApiIntegration(academicModel: academicModel){
                 self.viewModel.showAcademicDataIndicator = {

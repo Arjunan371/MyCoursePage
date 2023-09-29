@@ -21,7 +21,7 @@
                         <rect key="frame" x="5" y="5" width="110" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIW-mW-RAk">
-                                <rect key="frame" x="8" y="0.0" width="94" height="35"/>
+                                <rect key="frame" x="13" y="0.0" width="84" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button ">
@@ -32,9 +32,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QIW-mW-RAk" firstAttribute="leading" secondItem="Qeb-yK-pdP" secondAttribute="leading" constant="8" id="Lgc-V2-dBJ"/>
+                            <constraint firstItem="QIW-mW-RAk" firstAttribute="leading" secondItem="Qeb-yK-pdP" secondAttribute="leading" constant="13" id="Lgc-V2-dBJ"/>
                             <constraint firstItem="QIW-mW-RAk" firstAttribute="top" secondItem="Qeb-yK-pdP" secondAttribute="top" id="jol-69-YNv"/>
-                            <constraint firstAttribute="trailing" secondItem="QIW-mW-RAk" secondAttribute="trailing" constant="8" id="md6-vF-HhT"/>
+                            <constraint firstAttribute="trailing" secondItem="QIW-mW-RAk" secondAttribute="trailing" constant="13" id="md6-vF-HhT"/>
                             <constraint firstAttribute="bottom" secondItem="QIW-mW-RAk" secondAttribute="bottom" id="wRX-dj-62x"/>
                         </constraints>
                     </view>
