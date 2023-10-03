@@ -585,8 +585,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "mySessionTopButtonAction(sender:)"
             landmarkType = "7">
             <Locations>
@@ -633,8 +633,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

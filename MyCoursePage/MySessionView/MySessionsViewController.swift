@@ -90,6 +90,7 @@ class MySessionsViewController: UIViewController {
 }
 
 extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.mySessionCollectionData.count
     }
@@ -117,6 +118,7 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
         viewModel.showAcademicDataIndicator = { [self] in
             self.activityIndica.showActivityIndicator(uiView: view)
         }
+
         viewModel.forMySessionTableViewApi(SessionType: cellData.type ?? "",course: courseModel){sessionModel in
             let sessionData = sessionModel.data?.first
             self.courseTopicLabel.text = "\(self.courseModel?.programName ?? "")"
@@ -152,6 +154,10 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
             } else {
                 self.warningImage.image = UIImage(named: "warning1")
             }
+            if self.viewModel.MySessionTableDatas.count > 0 {
+                let indexPath = IndexPath(row: 0, section: 0)
+                self.MySessionsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
             self.MySessionsTableView.reloadData()
             self.activityIndica.hideActivityIndicator()
         }
@@ -165,7 +171,9 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
     }
     
 }
+
 extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.MySessionTableDatas.count
     }
@@ -201,10 +209,8 @@ extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
         }
         studentGroups = String(studentGroups.dropLast())
         cell.levelLabel.text = studentGroups
-        
-        cell.leaveLabel.text = "\(myCourseData.schedules?.first?.courseName ?? ""). \(myCourseData.schedules?.first?.mode?.rawValue ?? "").\(myCourseData.schedules?.first?.infraName ?? "")"
-        cell.timeLabel.text = " \(DateFromWebtoApp(myCourseData.schedules?.first?.scheduleDate ?? "") ), \(myCourseData.schedules?.first?.start?.hour ?? 0):\(myCourseData.schedules?.first?.start?.minute ?? 0) \(myCourseData.schedules?.first?.start?.format?.rawValue ?? "") - \(myCourseData.schedules?.first?.end?.hour ?? 0):\(myCourseData.schedules?.first?.end?.minute ?? 0) \(myCourseData.schedules?.first?.end?.format?.rawValue ?? "")"
-
+        cell.leaveLabel.text = "\(myCourseData.schedules?.first?.courseName ?? "") • \(myCourseData.schedules?.first?.mode?.rawValue ?? "") • \(myCourseData.schedules?.first?.infraName ?? "")"
+        cell.timeLabel.text = " \(DateFromWebtoApp(myCourseData.schedules?.first?.scheduleDate ?? "")), \(myCourseData.schedules?.first?.start?.hour ?? 0):\(myCourseData.schedules?.first?.start?.minute ?? 0) \(myCourseData.schedules?.first?.start?.format?.rawValue ?? "") - \(myCourseData.schedules?.first?.end?.hour ?? 0):\(myCourseData.schedules?.first?.end?.minute ?? 0) \(myCourseData.schedules?.first?.end?.format?.rawValue ?? "")"
         return cell
     }
     
@@ -216,29 +222,26 @@ extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let date = dateFormatter.date(from: date)
-        dateFormatter.dateFormat = "MMM dd, yyyy."
+        dateFormatter.dateFormat = "dd MMM yyyy"
         return  dateFormatter.string(from: date!)
     }
     
     func forSessonType(_ IntValue: Int) -> String {
         if viewModel.mySessionCollectionData.first?.count == 0 {
-            // If there are no decimal places, convert to Int
             let intValue = self.viewModel.MySessionTableDatas.first?.schedules?.first?.type ?? "regular"
             return "\(intValue)"
         } else {
-            // If there are decimal places, keep as Float
             return "\(viewModel.mySessionCollectionData.first?.type ?? "today")"
         }
     }
     
     func formatPercentage(_ floatValue: Float) -> String {
         if floatValue.truncatingRemainder(dividingBy: 1) == 0 {
-            // If there are no decimal places, convert to Int
             let intValue = Int(floatValue)
             return "\(intValue)"
         } else {
-            // If there are decimal places, keep as Float
             return "\(floatValue)"
         }
     }
+    
 }
