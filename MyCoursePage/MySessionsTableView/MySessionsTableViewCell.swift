@@ -20,7 +20,7 @@ class MySessionsTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        customView.layer.cornerRadius = 10
+        customView.layer.cornerRadius = 15
         contentView.layer.backgroundColor = CGColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
     }
     
@@ -33,11 +33,12 @@ class MySessionsTableViewCell: UITableViewCell {
     }
     
     func forAbsentLabel(model:Schedule) {
+        absentLabel.isHidden = false
         switch model.status{
         case "missed":
-            absentLabel.text = "Session Missed"
-            absentLabel.textColor = UIColor.orange
-            customView.layer.backgroundColor = UIColor.white.withAlphaComponent(0.7).cgColor
+                absentLabel.text = "Session Missed"
+                absentLabel.textColor = UIColor.orange
+                customView.layer.backgroundColor = UIColor.white.withAlphaComponent(0.7).cgColor
         case "completed":
             if model.students?.first?.status?.rawValue ?? "" == "pending" || model.students?.first?.status?.rawValue ?? ""  == "absent" {
                 absentLabel.text = "Absent"
@@ -47,8 +48,16 @@ class MySessionsTableViewCell: UITableViewCell {
                 absentLabel.text = "Present"
                 absentLabel.textColor = .systemGreen
                 customView.layer.backgroundColor = CGColor(red: 243/255, green: 254/255, blue: 237/255, alpha: 1)
+            } else {
+                absentLabel.text = model.students?.first?.status?.rawValue ?? ""
+                absentLabel.textColor = .systemGreen
+                customView.layer.backgroundColor = CGColor(red: 243/255, green: 254/255, blue: 237/255, alpha: 1)
             }
-        default:
+//        case "ongoing":
+//            absentLabel.text = "Ongoing"
+//            absentLabel.textColor = .black
+//            customView.layer.backgroundColor = UIColor.white.cgColor
+        default:            
                 customView.backgroundColor = .white
                 absentLabel.isHidden = true
         }

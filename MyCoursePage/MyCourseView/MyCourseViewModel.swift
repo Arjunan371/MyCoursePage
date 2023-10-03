@@ -35,16 +35,16 @@ class MyCourseVieModel {
         switch filterButtonIndex {
         case 1:
             filterArray = courseData.filter({ currentDate < $0.startDate ?? ""})
-            print("index1")
+       
         case 2:
             filterArray = courseData.filter({ currentDate > $0.endDate ?? ""})
-            print("index2")
+
         case 3:
             filterArray = courseData.filter({ $0.startDate ?? "" < currentDate && currentDate < $0.endDate ?? ""})
-            print("index3")
+   
         case 4:
             filterArray = courseData.compactMap({$0})
-            print("index4")
+
         default:
             break
         }
@@ -57,16 +57,16 @@ class MyCourseVieModel {
         switch filterButtonIndex {
         case 1:
             filterArray = courseData.filter({ currentDate < $0.startDate ?? ""})
-            print("index1")
+    
         case 2:
             filterArray = courseData.filter({ currentDate > $0.endDate ?? ""})
-            print("index2")
+
         case 3:
             filterArray = courseData.filter({ $0.startDate ?? "" < currentDate && currentDate < $0.endDate ?? ""})
-            print("index3")
+       
         case 4:
             filterArray = courseData.compactMap({$0})
-            print("index4")
+
         default:
             break
         }
@@ -102,7 +102,7 @@ class MyCourseVieModel {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTk2MzkzMywiZXhwIjoxNjk1OTk5OTMzfQ.1ozm50unUls678ylGCgfRuVysr7i5UHBjmIVI2HUhkE"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjMwOTc4NSwiZXhwIjoxNjk2MzQ1Nzg1fQ.9L5AaBrUCGHBtnx_W6qf_eBgAmH7Q0Bpa6ldBF-8tEo"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -138,7 +138,7 @@ class MyCourseVieModel {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTk2MzkzMywiZXhwIjoxNjk1OTk5OTMzfQ.1ozm50unUls678ylGCgfRuVysr7i5UHBjmIVI2HUhkE"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjMwOTc4NSwiZXhwIjoxNjk2MzQ1Nzg1fQ.9L5AaBrUCGHBtnx_W6qf_eBgAmH7Q0Bpa6ldBF-8tEo"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -148,7 +148,7 @@ class MyCourseVieModel {
                     guard let getdata = data else {return}
                     let jasonvalue = try decoder.decode(BelowModel.self, from: getdata)
                     if let datas = jasonvalue.data {
-                        print("datas",datas)
+        
                         DispatchQueue.main.async {
                             self.updateSessionData(data: datas, course: course)
                             completion?()
@@ -173,7 +173,7 @@ class MyCourseVieModel {
             "_user_id": "61a61789b1723a7f23346f70",
             "_institution_id": "5e5d0f1a15b4d600173d5692",
             "Content-Type": "application/json; charset=utf-8",
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTk2MzkzMywiZXhwIjoxNjk1OTk5OTMzfQ.1ozm50unUls678ylGCgfRuVysr7i5UHBjmIVI2HUhkE"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjMwOTc4NSwiZXhwIjoxNjk2MzQ1Nzg1fQ.9L5AaBrUCGHBtnx_W6qf_eBgAmH7Q0Bpa6ldBF-8tEo"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -185,7 +185,6 @@ class MyCourseVieModel {
                     if let datas = jasonvalue {
                         self.academicData = datas.data
                     }
-                    print("academicData===>", self.academicData)
                         DispatchQueue.main.async {
                             completion?()
                         }

@@ -59,10 +59,11 @@ class MySessionsViewController: UIViewController {
                 let absentDetail = self.roundToSingleDecimalDigit(Float(sessionData?.absentPercentage ?? 0))
                 self.warningLabel.text = "\(self.formatPercentage(absentDetail)) %"
                 if self.viewModel.mySessionCollectionData.first?.type == "all"{
-                    self.denialView.isHidden = false
-                    self.warningView.isHidden = false
-                    self.denialLabel.text = sessionData?.warningData ?? ""
-                  
+                    if sessionData?.warningData != "" {
+                        self.denialView.isHidden = false
+                        self.warningView.isHidden = false
+                        self.denialLabel.text = sessionData?.warningData ?? ""
+                    }
                 } else {
                     self.denialView.isHidden = true
                     self.warningView.isHidden = true
@@ -76,7 +77,6 @@ class MySessionsViewController: UIViewController {
                 self.activityIndica.hideActivityIndicator()
             }
         }
-        
     }
     
     func roundToSingleDecimalDigit(_ floatValue: Float) -> Float {
@@ -97,18 +97,16 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCourseCollectionView", for: indexPath) as! MyCourseCollectionViewCell
         let buttonData = viewModel.mySessionCollectionData[indexPath.row]
-        //        viewModel.forMySessionTableViewApi(SessionType: "\(buttonData.type ?? "")")
         let buttonDetail = "\(buttonData.name ?? "")(\(buttonData.count ?? 0))"
-        cell.mySessionTopButtons.setTitle(buttonDetail, for: .normal)
+        cell.buttonLabel.text = buttonDetail
         cell.mySessionTopButtons.addTarget(self, action: #selector(mySessionTopButtonAction), for: .touchUpInside)
         if viewModel.selectedTab == indexPath.item {
-            cell.mySessionTopButtons.setTitleColor(UIColor.systemBlue, for: .normal)
+            cell.buttonLabel.tintColor = .systemBlue
             cell.customView.backgroundColor = .white
         } else {
             cell.customView.backgroundColor = .white.withAlphaComponent(0.5)
-            cell.mySessionTopButtons.setTitleColor(.black, for: .normal)
+            cell.buttonLabel.textColor = .black
         }
-        
         return cell
     }
     @objc func mySessionTopButtonAction(sender: UIButton) {
@@ -139,9 +137,11 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
             let absentDetail = self.roundToSingleDecimalDigit(Float(sessionData?.absentPercentage ?? 0))
             self.warningLabel.text = "\(self.formatPercentage(absentDetail)) %"
             if self.viewModel.mySessionCollectionData[indexPath.row].type == "all"{
-                self.denialView.isHidden = false
-                self.warningView.isHidden = false
-                self.denialLabel.text = sessionData?.warningData ?? ""
+                if sessionData?.warningData != "" {
+                    self.denialView.isHidden = false
+                    self.warningView.isHidden = false
+                    self.denialLabel.text = sessionData?.warningData ?? ""
+                }
             } else {
                 self.denialView.isHidden = true
                 self.warningView.isHidden = true
@@ -155,7 +155,6 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
             self.MySessionsTableView.reloadData()
             self.activityIndica.hideActivityIndicator()
         }
-
         viewModel.selectedTab = indexPath.item
         MySessionsCollectionView.reloadData()
         
@@ -175,9 +174,6 @@ extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MySessionsTableViewCell", for: indexPath) as! MySessionsTableViewCell
         let myCourseData = viewModel.MySessionTableDatas[indexPath.row]
-        //        if myCourseData.sessionType == "support_session" {
-        //            cell.courseTopic.text =  "\(myCourseData.sessionTopic ?? "")"
-        //        } else {
         if let scheduleModel = myCourseData.schedules?.first {
             cell.forAbsentLabel(model: scheduleModel )
         }
@@ -198,15 +194,17 @@ extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
         var studentGroups = ""
         for index in 0..<(myCourseData.schedules?.first?.studentGroups?.count ?? 0) {
             if myCourseData.schedules?.first?.type == "regular" {
-                studentGroups += "\((myCourseData.schedules?.first?.studentGroups?[index].groupName ?? "").suffix(4))(\((myCourseData.schedules?.first?.studentGroups?[index].sessionGroup?.first?.groupName ?? "").suffix(3)))"
+                studentGroups += "\((myCourseData.schedules?.first?.studentGroups?[index].groupName ?? "").suffix(4))(\((myCourseData.schedules?.first?.studentGroups?[index].sessionGroup?.first?.groupName ?? "").suffix(3))),"
             } else {
-                studentGroups += "\((myCourseData.schedules?.first?.studentGroups?[index].groupName ?? ""))"
+                studentGroups += "\((myCourseData.schedules?.first?.studentGroups?[index].groupName ?? "")),"
             }
         }
+        studentGroups = String(studentGroups.dropLast())
         cell.levelLabel.text = studentGroups
         
-        cell.leaveLabel.text = "\(myCourseData.schedules?.first?.courseName ?? ""). \(myCourseData.schedules?.first?.mode?.rawValue ?? "")"
+        cell.leaveLabel.text = "\(myCourseData.schedules?.first?.courseName ?? ""). \(myCourseData.schedules?.first?.mode?.rawValue ?? "").\(myCourseData.schedules?.first?.infraName ?? "")"
         cell.timeLabel.text = " \(DateFromWebtoApp(myCourseData.schedules?.first?.scheduleDate ?? "") ), \(myCourseData.schedules?.first?.start?.hour ?? 0):\(myCourseData.schedules?.first?.start?.minute ?? 0) \(myCourseData.schedules?.first?.start?.format?.rawValue ?? "") - \(myCourseData.schedules?.first?.end?.hour ?? 0):\(myCourseData.schedules?.first?.end?.minute ?? 0) \(myCourseData.schedules?.first?.end?.format?.rawValue ?? "")"
+
         return cell
     }
     
@@ -229,7 +227,7 @@ extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
             return "\(intValue)"
         } else {
             // If there are decimal places, keep as Float
-            return "\(viewModel.mySessionCollectionData.first?.type)"
+            return "\(viewModel.mySessionCollectionData.first?.type ?? "today")"
         }
     }
     

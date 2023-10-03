@@ -21,7 +21,7 @@ class MySessionViewModel {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "AUthorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTk2MzkzMywiZXhwIjoxNjk1OTk5OTMzfQ.1ozm50unUls678ylGCgfRuVysr7i5UHBjmIVI2HUhkE"
+            "AUthorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjMwOTc4NSwiZXhwIjoxNjk2MzQ1Nzg1fQ.9L5AaBrUCGHBtnx_W6qf_eBgAmH7Q0Bpa6ldBF-8tEo"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -60,7 +60,7 @@ class MySessionViewModel {
             "_user_id": "61a61789b1723a7f23346f70",
             "_institution_calendar_id": "6390b1f6b6505c97e1be9337",
             "_institution_id": "5e5d0f1a15b4d600173d5692",
-            "AUthorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NTk2MzkzMywiZXhwIjoxNjk1OTk5OTMzfQ.1ozm50unUls678ylGCgfRuVysr7i5UHBjmIVI2HUhkE"
+            "AUthorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjMwOTc4NSwiZXhwIjoxNjk2MzQ1Nzg1fQ.9L5AaBrUCGHBtnx_W6qf_eBgAmH7Q0Bpa6ldBF-8tEo"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in

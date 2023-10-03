@@ -45,10 +45,10 @@ class ViewController: UIViewController{
     
     func forCornerRadius() {
         searchButton.layer.cornerRadius = 15
-        toStartButton.layer.cornerRadius = 10
-        completeButton.layer.cornerRadius = 10
-        progressButton.layer.cornerRadius = 10
-        allButton.layer.cornerRadius = 10
+        toStartButton.layer.cornerRadius = 15
+        completeButton.layer.cornerRadius = 15
+        progressButton.layer.cornerRadius = 15
+        allButton.layer.cornerRadius = 15
     }
     
     @IBAction func academicYearButton(_ sender: UIButton) {

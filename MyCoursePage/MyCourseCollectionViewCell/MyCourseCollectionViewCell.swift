@@ -1,14 +1,9 @@
-//
-//  MyCourseCollectionViewCell.swift
-//  MyCoursePage
-//
-//  Created by Arjunan on 19/09/23.
-//
 
 import UIKit
 
 class MyCourseCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var buttonLabel: UILabel!
     @IBOutlet weak var customView: UIView!
     @IBOutlet weak var mySessionTopButtons: UIButton!
     override func awakeFromNib() {
