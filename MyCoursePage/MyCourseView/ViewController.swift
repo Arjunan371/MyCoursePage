@@ -13,12 +13,14 @@ class ViewController: UIViewController{
     @IBOutlet weak var progressButton: UIButton!
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var toStartButton: UIButton!
+    
     let viewModel = MyCourseVieModel()
     public var activityIndicator = ActivityIndicator()
     @IBOutlet weak var myCourseTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         searchBar1.isHidden = true
         allButton.tintColor = .systemBlue
         academicYearLabel.text = "Academic Year: 2025 - 2026"
@@ -124,6 +126,26 @@ class ViewController: UIViewController{
         completeButton.backgroundColor = .white.withAlphaComponent(0.3)
     }
     
+    @IBAction func sideMenuButtonAction(_ sender: UIButton) {
+        let sideMenuViewController = storyboard?.instantiateViewController(withIdentifier: "sideMenuViewController") as! sideMenuViewController
+        sideMenuViewController.modalPresentationStyle = .overCurrentContext
+        presentFromLeftToRight(sideMenuViewController)
+    }
+    
+    func presentFromLeftToRight(_ viewControllerToPresent: UIViewController) {
+        viewControllerToPresent.view.frame = CGRect(x: -viewControllerToPresent.view.frame.width, y: 0, width: viewControllerToPresent.view.frame.width, height: viewControllerToPresent.view.frame.height)
+
+        // Add the new view controller as a child
+        addChild(viewControllerToPresent)
+        view.addSubview(viewControllerToPresent.view)
+        viewControllerToPresent.didMove(toParent: self)
+
+        // Animate the presentation
+        UIView.animate(withDuration: 0.1) {
+            viewControllerToPresent.view.frame = self.view.bounds
+        }
+    }
+    
     @IBAction func searchAction(_ sender: UIButton) {
         searchBar1.searchTextField.backgroundColor = .white.withAlphaComponent(0.5)
                 searchBar1.searchBarStyle = .minimal
@@ -210,43 +232,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
         }
         
         return cell
-        //        cell.attendanceDetailLabel.text = myCouse.attendanceDetails
-        //        cell.sessionAttendLabel.text = myCouse.sessionsAttend
-        //        cell.sessionAttendBelowLabel.text = myCouse.leave
-        //        cell.sessionsCompletedLabel.text = myCouse.completed
-        //        cell.inProgressLabel.text = myCouse.sessionsComplete
-        
-        /*     if cell.inProgressLabel.text == "00/ 52 Sessions Completed" {
-         cell.sessionsCompletedLabel.text = "To Start"
-         cell.sessionsCompletedLabel.textColor = .systemRed
-         cell.warningButton.isHidden = true
-         cell.progressView.tintColor = .systemGray
-         cell.progressView.progress = 0
-         } else if cell.inProgressLabel.text == "52/ 52 Sessions Completed" {
-         cell.sessionsCompletedLabel.text = "Completed"
-         cell.sessionsCompletedLabel.textColor = .systemGreen
-         cell.progressView.tintColor = .systemGreen
-         cell.progressView.progress = 1
-         } else {
-         let progressValue: Float = 40
-         let clampedProgress = min(max(progressValue, 0), 52)
-         cell.progressView.progress = clampedProgress / 52.0
-         cell.sessionsCompletedLabel.text = "InProgress"
-         }
-         
-         if cell.sessionAttendLabel.text == "00/ 52 Sessions Attended"  {
-         cell.circularViewLabel.text = "0%"
-         cell.view2.isHidden = true
-         cell.forCircularView(setprogres: 0)
-         } else if cell.sessionAttendLabel.text == "52/ 52 Sessions Attended" {
-         cell.circularViewLabel.text = "100%"
-         cell.forCircularView(setprogres: 1)
-         } else {
-         let attendance = Int ((40.0/52.0) * 100)
-         cell.circularViewLabel.text = "\(attendance)%"
-         cell.forCircularView(setprogres: 40/52)
-         } */
-        //  let myCouseBelowData = viewModel.myCourseBelowData
+
     }
     
     @objc func downArrowButton(sender: UIButton) {
@@ -281,7 +267,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(withIdentifier: "MySessionsTabBarController") as! MySessionsTabBarController
         let model = viewModel.courseData[indexPath.row]
         vc.myCourseModel = model
-        present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func roundToSingleDecimalDigit(_ floatValue: Float) -> Float {
@@ -331,3 +317,4 @@ extension ViewController: UISearchBarDelegate {
         self.myCourseTableView.reloadData()
     }
 }
+

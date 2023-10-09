@@ -29,62 +29,65 @@ class MySessionsViewController: UIViewController {
         MySessionsTableView.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
         MySessionsTableView.register(UINib(nibName: "MySessionsTableViewCell", bundle: nil), forCellReuseIdentifier: "MySessionsTableViewCell")
         MySessionsCollectionView.register(UINib(nibName: "MyCourseCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyCourseCollectionView")
+        
+        warningView.isHidden = true
+        denialView.isHidden = true
+
+            viewModel.forMySessionCollectionApi(course: courseModel){
+                self.viewModel.selectedTab = 1
+                self.MySessionsCollectionView.reloadData()
+                self.viewModel.showAcademicDataIndicator = {
+                    self.activityIndica.showActivityIndicator(uiView: self.view)
+                }
+                self.viewModel.forMySessionTableViewApi(SessionType: self.viewModel.MySessionTableDatas.first?.schedules?.first?.type ?? "regular",course: self.courseModel){ sessionModel in
+                    let sessionData = sessionModel.data?.first
+                    self.courseTopicLabel.text = "\(self.courseModel?.programName ?? "")"
+                    self.courseNameLabel.text = "\(self.courseModel?.courseName ?? "")"
+                    let firstValue = sessionData?.attendedSessions ?? 0
+                    let totalValue = sessionData?.completedSessions ?? 0
+                    self.attendanceLabel.text = "Attendace"
+                    if totalValue > 0 {
+                        let progress = (Float(firstValue) / Float(totalValue))
+                        let attendance = self.roundToSingleDecimalDigit(progress * 100)
+                        self.progressLabel.text = "\(self.formatPercentage(attendance))%"
+                        self.attendanceSessionsLabel.text = "\(firstValue)/\(totalValue) Sessions"
+                    } else {
+                        self.attendanceSessionsLabel.text = "00 / 00"
+                        self.progressLabel.text = "-"
+                    }
+                    let absentDetail = self.roundToSingleDecimalDigit(Float(sessionData?.absentPercentage ?? 0))
+                    self.warningLabel.text = "\(self.formatPercentage(absentDetail)) %"
+                    if self.viewModel.mySessionCollectionData.first?.type == "all"{
+                        if sessionData?.warningData != "" {
+                            self.denialView.isHidden = false
+                            self.warningView.isHidden = false
+                            self.denialLabel.text = sessionData?.warningData ?? ""
+                        }
+                    } else {
+                        self.denialView.isHidden = true
+                        self.warningView.isHidden = true
+                    }
+                    if self.denialLabel.text == "Denial"{
+                        self.warningImage.image = UIImage(named: "warning")
+                    } else {
+                        self.warningImage.image = UIImage(named: "warning1")
+                    }
+                    self.MySessionsTableView.reloadData()
+                    self.activityIndica.hideActivityIndicator()
+                }
+            }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        warningView.isHidden = true
-        denialView.isHidden = true
-        viewModel.forMySessionCollectionApi(course: courseModel){
-            self.viewModel.selectedTab = 1
-            self.MySessionsCollectionView.reloadData()
-            self.viewModel.showAcademicDataIndicator = {
-                self.activityIndica.showActivityIndicator(uiView: self.view)
-            }
-            self.viewModel.forMySessionTableViewApi(SessionType: self.viewModel.MySessionTableDatas.first?.schedules?.first?.type ?? "regular",course: self.courseModel){ sessionModel in
-                let sessionData = sessionModel.data?.first
-                self.courseTopicLabel.text = "\(self.courseModel?.programName ?? "")"
-                self.courseNameLabel.text = "\(self.courseModel?.courseName ?? "")"
-                let firstValue = sessionData?.attendedSessions ?? 0
-                let totalValue = sessionData?.completedSessions ?? 0
-                self.attendanceLabel.text = "Attendace"
-                if totalValue > 0 {
-                    let progress = (Float(firstValue) / Float(totalValue))
-                    let attendance = self.roundToSingleDecimalDigit(progress * 100)
-                    self.progressLabel.text = "\(self.formatPercentage(attendance))%"
-                    self.attendanceSessionsLabel.text = "\(firstValue)/\(totalValue) Sessions"
-                } else {
-                    self.attendanceSessionsLabel.text = "00 / 00"
-                    self.progressLabel.text = "-"
-                }
-                let absentDetail = self.roundToSingleDecimalDigit(Float(sessionData?.absentPercentage ?? 0))
-                self.warningLabel.text = "\(self.formatPercentage(absentDetail)) %"
-                if self.viewModel.mySessionCollectionData.first?.type == "all"{
-                    if sessionData?.warningData != "" {
-                        self.denialView.isHidden = false
-                        self.warningView.isHidden = false
-                        self.denialLabel.text = sessionData?.warningData ?? ""
-                    }
-                } else {
-                    self.denialView.isHidden = true
-                    self.warningView.isHidden = true
-                }
-                if self.denialLabel.text == "Denial"{
-                    self.warningImage.image = UIImage(named: "warning")
-                } else {
-                    self.warningImage.image = UIImage(named: "warning1")
-                }
-                self.MySessionsTableView.reloadData()
-                self.activityIndica.hideActivityIndicator()
-            }
+
         }
-    }
     
     func roundToSingleDecimalDigit(_ floatValue: Float) -> Float {
         return round(floatValue * 10.0) / 10.0
     }
     
     @IBAction func MysSessionBackButtonAction(_ sender: UIButton) {
-        self.dismiss(animated: false)
+        navigationController?.popViewController(animated: true)
     }
     
 }
@@ -170,6 +173,16 @@ extension MySessionsViewController: UICollectionViewDelegate,UICollectionViewDat
         return String(format: "%02d", intValue)
     }
     
+    static func storyboard(_ name: String) -> UIStoryboard {
+        return UIStoryboard(name: name, bundle: nil)
+    }
+    
+    static func getViewController<T>(type: T.Type, storyboard: String) -> T {
+        let identifies = String(describing: T.self)
+        let vc = self.storyboard(storyboard).instantiateViewController(withIdentifier: identifies) as! T
+        return vc
+    }
+    
 }
 
 extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
@@ -212,6 +225,15 @@ extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
         cell.leaveLabel.text = "\(myCourseData.schedules?.first?.courseName ?? "") • \(myCourseData.schedules?.first?.mode?.rawValue ?? "") • \(myCourseData.schedules?.first?.infraName ?? "")"
         cell.timeLabel.text = " \(DateFromWebtoApp(myCourseData.schedules?.first?.scheduleDate ?? "")), \(myCourseData.schedules?.first?.start?.hour ?? 0):\(myCourseData.schedules?.first?.start?.minute ?? 0) \(myCourseData.schedules?.first?.start?.format?.rawValue ?? "") - \(myCourseData.schedules?.first?.end?.hour ?? 0):\(myCourseData.schedules?.first?.end?.minute ?? 0) \(myCourseData.schedules?.first?.end?.format?.rawValue ?? "")"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "SessionTabBarController") as! SessionTabBarController
+        let myCourseData = viewModel.MySessionTableDatas[indexPath.row]
+        vc.tableModel = myCourseData
+        vc.courseModelData = courseModel
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

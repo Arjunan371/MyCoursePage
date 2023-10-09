@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2A23722ACD30A100294F66 /* sideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A23712ACD30A100294F66 /* sideMenuViewController.swift */; };
+		9F2A23752ACD30CC00294F66 /* sideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A23732ACD30CC00294F66 /* sideMenuTableViewCell.swift */; };
+		9F2A23762ACD30CC00294F66 /* sideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2A23742ACD30CC00294F66 /* sideMenuTableViewCell.xib */; };
+		9F5E806C2ACC469800BBB1F6 /* NoticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E80672ACC469600BBB1F6 /* NoticationViewController.swift */; };
+		9F5E806D2ACC469800BBB1F6 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E80682ACC469600BBB1F6 /* NotificationViewModel.swift */; };
+		9F5E806E2ACC469800BBB1F6 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E80692ACC469700BBB1F6 /* NotificationModel.swift */; };
+		9F5E806F2ACC469800BBB1F6 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E806A2ACC469700BBB1F6 /* NotificationTableViewCell.swift */; };
+		9F5E80702ACC469800BBB1F6 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F5E806B2ACC469800BBB1F6 /* NotificationTableViewCell.xib */; };
+		9F5E80722ACC4C8B00BBB1F6 /* AllActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E80712ACC4C8B00BBB1F6 /* AllActivitiesViewController.swift */; };
 		9F7453082ABB18F6006E6E52 /* MySessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7453072ABB18F6006E6E52 /* MySessionModel.swift */; };
 		9F74530A2ABB191A006E6E52 /* MySessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7453092ABB191A006E6E52 /* MySessionViewModel.swift */; };
 		9F77D33A2AB075DC00EE9513 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */; };
@@ -26,6 +35,19 @@
 		9F8A06522AAB02C100D3AF34 /* MyCourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06512AAB02C100D3AF34 /* MyCourseModel.swift */; };
 		9F8A06542AAB02F600D3AF34 /* MyCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06532AAB02F600D3AF34 /* MyCourseViewModel.swift */; };
 		9F8A06562AAB330500D3AF34 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */; };
+		9F8E46252ACE9A00006F69C0 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E46242ACE9A00006F69C0 /* SessionModel.swift */; };
+		9F8E46282ACED134006F69C0 /* SecondSessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E46262ACED134006F69C0 /* SecondSessionTableViewCell.swift */; };
+		9F8E46292ACED134006F69C0 /* SecondSessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E46272ACED134006F69C0 /* SecondSessionTableViewCell.xib */; };
+		9F90288F2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90288D2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.swift */; };
+		9F9028902ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F90288E2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib */; };
+		9FCF8A4C2ACD41DC00F0B145 /* TransitionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF8A4B2ACD41DC00F0B145 /* TransitionClass.swift */; };
+		9FCF8A532ACD7A6300F0B145 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF8A512ACD7A6300F0B145 /* SessionTableViewCell.swift */; };
+		9FCF8A542ACD7A6300F0B145 /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCF8A522ACD7A6300F0B145 /* SessionTableViewCell.xib */; };
+		9FCF8A562ACD7A8B00F0B145 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF8A552ACD7A8B00F0B145 /* SessionViewController.swift */; };
+		9FCF8A582ACD7AA300F0B145 /* AppTypeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF8A572ACD7AA300F0B145 /* AppTypeCheck.swift */; };
+		9FCF8A5A2ACD7AC000F0B145 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF8A592ACD7AC000F0B145 /* DocumentViewController.swift */; };
+		9FCF8A5C2ACD7C6000F0B145 /* SessionTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF8A5B2ACD7C6000F0B145 /* SessionTabBarController.swift */; };
+		9FCF8A5E2ACD9FDF00F0B145 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF8A5D2ACD9FDF00F0B145 /* SessionViewModel.swift */; };
 		9FD929FA2AB9A6200043322B /* MySessionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD929F82AB9A6200043322B /* MySessionsTableViewCell.swift */; };
 		9FD929FB2AB9A6200043322B /* MySessionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD929F92AB9A6200043322B /* MySessionsTableViewCell.xib */; };
 		9FD929FD2AB9A9B80043322B /* MySessionsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD929FC2AB9A9B80043322B /* MySessionsTabBarController.swift */; };
@@ -53,6 +75,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F2A23712ACD30A100294F66 /* sideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuViewController.swift; sourceTree = "<group>"; };
+		9F2A23732ACD30CC00294F66 /* sideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		9F2A23742ACD30CC00294F66 /* sideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = sideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		9F5E80672ACC469600BBB1F6 /* NoticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticationViewController.swift; sourceTree = "<group>"; };
+		9F5E80682ACC469600BBB1F6 /* NotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		9F5E80692ACC469700BBB1F6 /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		9F5E806A2ACC469700BBB1F6 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		9F5E806B2ACC469800BBB1F6 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		9F5E80712ACC4C8B00BBB1F6 /* AllActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllActivitiesViewController.swift; sourceTree = "<group>"; };
 		9F7453072ABB18F6006E6E52 /* MySessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionModel.swift; sourceTree = "<group>"; };
 		9F7453092ABB191A006E6E52 /* MySessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionViewModel.swift; sourceTree = "<group>"; };
 		9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -76,6 +107,19 @@
 		9F8A06512AAB02C100D3AF34 /* MyCourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseModel.swift; sourceTree = "<group>"; };
 		9F8A06532AAB02F600D3AF34 /* MyCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseViewModel.swift; sourceTree = "<group>"; };
 		9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		9F8E46242ACE9A00006F69C0 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		9F8E46262ACED134006F69C0 /* SecondSessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSessionTableViewCell.swift; sourceTree = "<group>"; };
+		9F8E46272ACED134006F69C0 /* SecondSessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondSessionTableViewCell.xib; sourceTree = "<group>"; };
+		9F90288D2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSessionTableViewCell.swift; sourceTree = "<group>"; };
+		9F90288E2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdSessionTableViewCell.xib; sourceTree = "<group>"; };
+		9FCF8A4B2ACD41DC00F0B145 /* TransitionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionClass.swift; sourceTree = "<group>"; };
+		9FCF8A512ACD7A6300F0B145 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
+		9FCF8A522ACD7A6300F0B145 /* SessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
+		9FCF8A552ACD7A8B00F0B145 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		9FCF8A572ACD7AA300F0B145 /* AppTypeCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTypeCheck.swift; sourceTree = "<group>"; };
+		9FCF8A592ACD7AC000F0B145 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		9FCF8A5B2ACD7C6000F0B145 /* SessionTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTabBarController.swift; sourceTree = "<group>"; };
+		9FCF8A5D2ACD9FDF00F0B145 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
 		9FD929F82AB9A6200043322B /* MySessionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionsTableViewCell.swift; sourceTree = "<group>"; };
 		9FD929F92AB9A6200043322B /* MySessionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySessionsTableViewCell.xib; sourceTree = "<group>"; };
 		9FD929FC2AB9A9B80043322B /* MySessionsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionsTabBarController.swift; sourceTree = "<group>"; };
@@ -110,6 +154,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F5E80662ACC466700BBB1F6 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				9F5E80692ACC469700BBB1F6 /* NotificationModel.swift */,
+				9F5E806A2ACC469700BBB1F6 /* NotificationTableViewCell.swift */,
+				9F5E806B2ACC469800BBB1F6 /* NotificationTableViewCell.xib */,
+				9F5E80682ACC469600BBB1F6 /* NotificationViewModel.swift */,
+				9F5E80672ACC469600BBB1F6 /* NoticationViewController.swift */,
+				9F5E80712ACC4C8B00BBB1F6 /* AllActivitiesViewController.swift */,
+				9FCF8A4B2ACD41DC00F0B145 /* TransitionClass.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		9F7453062ABB183F006E6E52 /* MySessionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,14 +215,16 @@
 			children = (
 				9F8A061D2AAAF12600D3AF34 /* AppDelegate.swift */,
 				9F8A061F2AAAF12600D3AF34 /* SceneDelegate.swift */,
+				9FCF8A4E2ACD71FB00F0B145 /* SideMenuView */,
 				9F74530B2ABB1930006E6E52 /* MyCourseView */,
 				9F7453062ABB183F006E6E52 /* MySessionView */,
-				9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */,
-				9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */,
+				9FCF8A4F2ACD72A400F0B145 /* ActivityCircularView */,
 				9FD92A032AB9B96B0043322B /* AcademicTableView */,
 				9FD92A022AB9B93D0043322B /* MyCourseTableView */,
 				9FD92A012AB9B9040043322B /* MyCourseCollectionViewCell */,
+				9FCF8A502ACD7A2C00F0B145 /* SessionTabBar */,
 				9FD92A002AB9B8DA0043322B /* MySessionsTableView */,
+				9F5E80662ACC466700BBB1F6 /* Notification */,
 				9F8A06232AAAF12600D3AF34 /* Main.storyboard */,
 				9F8A06262AAAF12700D3AF34 /* Assets.xcassets */,
 				9F8A06282AAAF12700D3AF34 /* LaunchScreen.storyboard */,
@@ -188,6 +248,44 @@
 				9F8A06402AAAF12800D3AF34 /* MyCoursePageUITestsLaunchTests.swift */,
 			);
 			path = MyCoursePageUITests;
+			sourceTree = "<group>";
+		};
+		9FCF8A4E2ACD71FB00F0B145 /* SideMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				9F2A23742ACD30CC00294F66 /* sideMenuTableViewCell.xib */,
+				9F2A23732ACD30CC00294F66 /* sideMenuTableViewCell.swift */,
+				9F2A23712ACD30A100294F66 /* sideMenuViewController.swift */,
+			);
+			path = SideMenuView;
+			sourceTree = "<group>";
+		};
+		9FCF8A4F2ACD72A400F0B145 /* ActivityCircularView */ = {
+			isa = PBXGroup;
+			children = (
+				9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */,
+				9F8A06552AAB330500D3AF34 /* CircularProgressView.swift */,
+			);
+			path = ActivityCircularView;
+			sourceTree = "<group>";
+		};
+		9FCF8A502ACD7A2C00F0B145 /* SessionTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9FCF8A512ACD7A6300F0B145 /* SessionTableViewCell.swift */,
+				9FCF8A522ACD7A6300F0B145 /* SessionTableViewCell.xib */,
+				9F90288D2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.swift */,
+				9F90288E2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib */,
+				9FCF8A552ACD7A8B00F0B145 /* SessionViewController.swift */,
+				9F8E46262ACED134006F69C0 /* SecondSessionTableViewCell.swift */,
+				9F8E46272ACED134006F69C0 /* SecondSessionTableViewCell.xib */,
+				9FCF8A5D2ACD9FDF00F0B145 /* SessionViewModel.swift */,
+				9F8E46242ACE9A00006F69C0 /* SessionModel.swift */,
+				9FCF8A572ACD7AA300F0B145 /* AppTypeCheck.swift */,
+				9FCF8A592ACD7AC000F0B145 /* DocumentViewController.swift */,
+				9FCF8A5B2ACD7C6000F0B145 /* SessionTabBarController.swift */,
+			);
+			path = SessionTabBar;
 			sourceTree = "<group>";
 		};
 		9FD92A002AB9B8DA0043322B /* MySessionsTableView */ = {
@@ -330,10 +428,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCF8A542ACD7A6300F0B145 /* SessionTableViewCell.xib in Resources */,
+				9F5E80702ACC469800BBB1F6 /* NotificationTableViewCell.xib in Resources */,
 				9F8A06502AAAF7C000D3AF34 /* MyCourseTableViewCell.xib in Resources */,
 				9F8A062A2AAAF12700D3AF34 /* LaunchScreen.storyboard in Resources */,
+				9F9028902ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib in Resources */,
 				9FD929FB2AB9A6200043322B /* MySessionsTableViewCell.xib in Resources */,
 				9FE2306F2AAF468C0008B489 /* AcademicTableViewCell.xib in Resources */,
+				9F8E46292ACED134006F69C0 /* SecondSessionTableViewCell.xib in Resources */,
+				9F2A23762ACD30CC00294F66 /* sideMenuTableViewCell.xib in Resources */,
 				9F78ECF42AB9A1EB0056D07C /* MyCourseCollectionViewCell.xib in Resources */,
 				9F8A06272AAAF12700D3AF34 /* Assets.xcassets in Resources */,
 				9F8A06252AAAF12600D3AF34 /* Main.storyboard in Resources */,
@@ -362,21 +465,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F7453082ABB18F6006E6E52 /* MySessionModel.swift in Sources */,
+				9FCF8A5E2ACD9FDF00F0B145 /* SessionViewModel.swift in Sources */,
+				9F5E80722ACC4C8B00BBB1F6 /* AllActivitiesViewController.swift in Sources */,
 				9F8A064F2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift in Sources */,
 				9F8A06222AAAF12600D3AF34 /* ViewController.swift in Sources */,
+				9FCF8A582ACD7AA300F0B145 /* AppTypeCheck.swift in Sources */,
 				9F8A061E2AAAF12600D3AF34 /* AppDelegate.swift in Sources */,
 				9F8A06522AAB02C100D3AF34 /* MyCourseModel.swift in Sources */,
+				9F90288F2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.swift in Sources */,
+				9F5E806D2ACC469800BBB1F6 /* NotificationViewModel.swift in Sources */,
+				9FCF8A532ACD7A6300F0B145 /* SessionTableViewCell.swift in Sources */,
+				9FCF8A5C2ACD7C6000F0B145 /* SessionTabBarController.swift in Sources */,
 				9FD929FD2AB9A9B80043322B /* MySessionsTabBarController.swift in Sources */,
 				9FD929FF2AB9AFAB0043322B /* MySessionsViewController.swift in Sources */,
 				9FE2306B2AAF43320008B489 /* AcademicYearViewController.swift in Sources */,
+				9F2A23752ACD30CC00294F66 /* sideMenuTableViewCell.swift in Sources */,
 				9F78ECF32AB9A1EB0056D07C /* MyCourseCollectionViewCell.swift in Sources */,
+				9F5E806C2ACC469800BBB1F6 /* NoticationViewController.swift in Sources */,
 				9F74530A2ABB191A006E6E52 /* MySessionViewModel.swift in Sources */,
 				9F8A06202AAAF12600D3AF34 /* SceneDelegate.swift in Sources */,
+				9F2A23722ACD30A100294F66 /* sideMenuViewController.swift in Sources */,
 				9F77D33A2AB075DC00EE9513 /* ActivityIndicator.swift in Sources */,
+				9FCF8A4C2ACD41DC00F0B145 /* TransitionClass.swift in Sources */,
 				9FD929FA2AB9A6200043322B /* MySessionsTableViewCell.swift in Sources */,
 				9F8A06542AAB02F600D3AF34 /* MyCourseViewModel.swift in Sources */,
+				9FCF8A562ACD7A8B00F0B145 /* SessionViewController.swift in Sources */,
+				9F5E806F2ACC469800BBB1F6 /* NotificationTableViewCell.swift in Sources */,
 				9FE2306E2AAF468C0008B489 /* AcademicTableViewCell.swift in Sources */,
+				9FCF8A5A2ACD7AC000F0B145 /* DocumentViewController.swift in Sources */,
+				9F8E46282ACED134006F69C0 /* SecondSessionTableViewCell.swift in Sources */,
 				9F8A06562AAB330500D3AF34 /* CircularProgressView.swift in Sources */,
+				9F8E46252ACE9A00006F69C0 /* SessionModel.swift in Sources */,
+				9F5E806E2ACC469800BBB1F6 /* NotificationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

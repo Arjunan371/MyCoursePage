@@ -8,7 +8,7 @@ class MyCourseVieModel {
     var showIndicator: (() -> ())?
     var showAcademicDataIndicator: (() -> ())?
     var filterButtonIndex = 4
-
+    var sideMenuShow = false
     //  var buttonTitles: [String] = ["Today","Lecture","Event","Support Session","All"]
     // loadAcademicData()?.data ??
     //    var topic:[String] = ["Course Code - Course 1","Course Code - Course 1","Course Code - Course 1"]
@@ -102,7 +102,7 @@ class MyCourseVieModel {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjMwOTc4NSwiZXhwIjoxNjk2MzQ1Nzg1fQ.9L5AaBrUCGHBtnx_W6qf_eBgAmH7Q0Bpa6ldBF-8tEo"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjgyNzM2MywiZXhwIjoxNjk2ODYzMzYzfQ._rlWUR6Z-cfyWd4Si-xGnH9KwlIHYxt6m0L_a2X4tUY"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -138,7 +138,7 @@ class MyCourseVieModel {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjMwOTc4NSwiZXhwIjoxNjk2MzQ1Nzg1fQ.9L5AaBrUCGHBtnx_W6qf_eBgAmH7Q0Bpa6ldBF-8tEo"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjgyNzM2MywiZXhwIjoxNjk2ODYzMzYzfQ._rlWUR6Z-cfyWd4Si-xGnH9KwlIHYxt6m0L_a2X4tUY"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -173,7 +173,7 @@ class MyCourseVieModel {
             "_user_id": "61a61789b1723a7f23346f70",
             "_institution_id": "5e5d0f1a15b4d600173d5692",
             "Content-Type": "application/json; charset=utf-8",
-            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjMwOTc4NSwiZXhwIjoxNjk2MzQ1Nzg1fQ.9L5AaBrUCGHBtnx_W6qf_eBgAmH7Q0Bpa6ldBF-8tEo"
+            "AUthorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEMDAxMiIsImlhdCI6MTY5NjgyNzM2MywiZXhwIjoxNjk2ODYzMzYzfQ._rlWUR6Z-cfyWd4Si-xGnH9KwlIHYxt6m0L_a2X4tUY"
         ]
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) {(data,response,error) in
@@ -580,3 +580,4 @@ extension Date {
 
     }
 }
+

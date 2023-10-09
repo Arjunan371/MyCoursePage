@@ -2,7 +2,6 @@ import UIKit
 
 class MySessionsTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    let viewModel = MySessionViewModel()
     var myCourseModel: Datum? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
