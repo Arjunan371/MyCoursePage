@@ -9,7 +9,7 @@ import UIKit
 
 class ThirdSessionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var absentIMage2: UIImageView!
+    @IBOutlet weak var absentIMageButton: UIButton!
     @IBOutlet weak var absentImage1: UIImageView!
     @IBOutlet weak var absentLabel: UILabel!
     @IBOutlet weak var bottomView: UIView!
@@ -51,7 +51,7 @@ class ThirdSessionTableViewCell: UITableViewCell {
     }
     
     func sessionConfigure(model: SessionModelData) {
-        dateLabel.text = "\(DateFromWebtoApp(model.schedules?.first?.scheduleDate ?? "")),\(model.schedules?.first?.start?.hour ?? 0) : \(model.schedules?.first?.start?.minute ?? 00) \(model.schedules?.first?.start?.format ?? "") - \(model.schedules?.first?.end?.hour ?? 0) : \(model.schedules?.first?.end?.minute ?? 00) \(model.schedules?.first?.end?.format ?? "")"
+        dateLabel.text = "\(DateFromWebtoApp(model.schedules?.first?.scheduleDate ?? "")), \(model.schedules?.first?.start?.hour ?? 0) : \(model.schedules?.first?.start?.minute ?? 00) \(model.schedules?.first?.start?.format ?? "") - \(model.schedules?.first?.end?.hour ?? 0) : \(model.schedules?.first?.end?.minute ?? 00) \(model.schedules?.first?.end?.format ?? "")"
         var studentGroups = ""
         for index in 0..<(model.schedules?.first?.studentGroups?.count ?? 0) {
             if model.schedules?.first?.type == "regular" {
@@ -65,14 +65,21 @@ class ThirdSessionTableViewCell: UITableViewCell {
         programLabel.text = "\(model.schedules?.first?.courseName ?? "") • \(model.schedules?.first?.mode ?? "") • \(model.schedules?.first?.infraName ?? "-")"
         staff.text = "Staff"
         staffName.text = "\(model.schedules?.first?.staffs?.first?.staffName?.first ?? "") \(model.schedules?.first?.staffs?.first?.staffName?.middle ?? "") \(model.schedules?.first?.staffs?.first?.staffName?.last ?? "")"
+        if model.schedules?.first?.mode ?? "" == "onsite" {
+            absentIMageButton.setImage(UIImage(systemName: "exclamationmark.circle.fill"), for: .normal)
+            absentIMageButton.tintColor = .lightGray
+        }
+
     }
 
+
+    
 func forAbsentLabel(model:SessionSchedule) {
     
     switch model.status{
     case "missed":
         absentLabel.text = "Session Missed"
-        absentLabel.textColor = .systemRed
+        absentLabel.textColor = .systemOrange
     case "completed":
         if model.students?.first?.status ?? "" == "present" {
             absentLabel.text = "Attendance Marked Successfully"
@@ -96,7 +103,7 @@ func DateFromWebtoApp(_ date: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     let date = dateFormatter.date(from: date)
-    dateFormatter.dateFormat = "MMM dd, yyyy."
+    dateFormatter.dateFormat = "MMM dd, yyyy"
     return  dateFormatter.string(from: date!)
 }
 }

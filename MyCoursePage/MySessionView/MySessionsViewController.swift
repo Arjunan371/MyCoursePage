@@ -18,6 +18,7 @@ class MySessionsViewController: UIViewController {
     let activityIndica = ActivityIndicator()
     let viewModel = MySessionViewModel()
     var courseModel:Datum? = nil
+    var topicLevel: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -233,6 +234,20 @@ extension MySessionsViewController: UITableViewDelegate,UITableViewDataSource {
         let myCourseData = viewModel.MySessionTableDatas[indexPath.row]
         vc.tableModel = myCourseData
         vc.courseModelData = courseModel
+        
+        if myCourseData.mergeWith?.count == nil {
+            if myCourseData.schedules?.first?.type == "regular"{
+                vc.topicLevel =  "\(myCourseData.deliverySymbol ?? "" )\(myCourseData.deliveryNo ?? 0 ) - \(myCourseData.sessionTopic ?? "")"
+                
+            } else {
+                vc.topicLevel =  "\(myCourseData.schedules?.first?.subType ?? "" ) - \(myCourseData.sessionTopic ?? "")"
+            }
+        } else {
+            for index in 0..<(myCourseData.mergeWith?.count ?? 0){
+                vc.topicLevel  = "\(myCourseData.deliverySymbol ?? "" )\(myCourseData.deliveryNo ?? 0 ),\(myCourseData.mergeWith?[index].session?.deliverySymbol?.rawValue ?? "")\(myCourseData.mergeWith?[index].session?.deliveryNo ?? 0)"
+            }
+        }
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -21,6 +21,7 @@
 		9F77D33A2AB075DC00EE9513 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */; };
 		9F78ECF32AB9A1EB0056D07C /* MyCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78ECF12AB9A1EB0056D07C /* MyCourseCollectionViewCell.swift */; };
 		9F78ECF42AB9A1EB0056D07C /* MyCourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F78ECF22AB9A1EB0056D07C /* MyCourseCollectionViewCell.xib */; };
+		9F89CDE82AD5145A0001E222 /* AbsentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F89CDE72AD514590001E222 /* AbsentInfoViewController.swift */; };
 		9F8A061E2AAAF12600D3AF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A061D2AAAF12600D3AF34 /* AppDelegate.swift */; };
 		9F8A06202AAAF12600D3AF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A061F2AAAF12600D3AF34 /* SceneDelegate.swift */; };
 		9F8A06222AAAF12600D3AF34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A06212AAAF12600D3AF34 /* ViewController.swift */; };
@@ -40,6 +41,8 @@
 		9F8E46292ACED134006F69C0 /* SecondSessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E46272ACED134006F69C0 /* SecondSessionTableViewCell.xib */; };
 		9F90288F2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90288D2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.swift */; };
 		9F9028902ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F90288E2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib */; };
+		9F9D26672AD57E7E00CF41B3 /* PopUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D26652AD57E7E00CF41B3 /* PopUpTableViewCell.swift */; };
+		9F9D26682AD57E7E00CF41B3 /* PopUpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F9D26662AD57E7E00CF41B3 /* PopUpTableViewCell.xib */; };
 		9FCF8A4C2ACD41DC00F0B145 /* TransitionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF8A4B2ACD41DC00F0B145 /* TransitionClass.swift */; };
 		9FCF8A532ACD7A6300F0B145 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF8A512ACD7A6300F0B145 /* SessionTableViewCell.swift */; };
 		9FCF8A542ACD7A6300F0B145 /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCF8A522ACD7A6300F0B145 /* SessionTableViewCell.xib */; };
@@ -89,6 +92,7 @@
 		9F77D3392AB075DC00EE9513 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9F78ECF12AB9A1EB0056D07C /* MyCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseCollectionViewCell.swift; sourceTree = "<group>"; };
 		9F78ECF22AB9A1EB0056D07C /* MyCourseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCourseCollectionViewCell.xib; sourceTree = "<group>"; };
+		9F89CDE72AD514590001E222 /* AbsentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentInfoViewController.swift; sourceTree = "<group>"; };
 		9F8A061A2AAAF12600D3AF34 /* MyCoursePage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCoursePage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8A061D2AAAF12600D3AF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8A061F2AAAF12600D3AF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		9F8E46272ACED134006F69C0 /* SecondSessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondSessionTableViewCell.xib; sourceTree = "<group>"; };
 		9F90288D2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSessionTableViewCell.swift; sourceTree = "<group>"; };
 		9F90288E2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdSessionTableViewCell.xib; sourceTree = "<group>"; };
+		9F9D26652AD57E7E00CF41B3 /* PopUpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpTableViewCell.swift; sourceTree = "<group>"; };
+		9F9D26662AD57E7E00CF41B3 /* PopUpTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpTableViewCell.xib; sourceTree = "<group>"; };
 		9FCF8A4B2ACD41DC00F0B145 /* TransitionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionClass.swift; sourceTree = "<group>"; };
 		9FCF8A512ACD7A6300F0B145 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		9FCF8A522ACD7A6300F0B145 /* SessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
@@ -275,6 +281,9 @@
 				9FCF8A512ACD7A6300F0B145 /* SessionTableViewCell.swift */,
 				9FCF8A522ACD7A6300F0B145 /* SessionTableViewCell.xib */,
 				9F90288D2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.swift */,
+				9F89CDE72AD514590001E222 /* AbsentInfoViewController.swift */,
+				9F9D26652AD57E7E00CF41B3 /* PopUpTableViewCell.swift */,
+				9F9D26662AD57E7E00CF41B3 /* PopUpTableViewCell.xib */,
 				9F90288E2ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib */,
 				9FCF8A552ACD7A8B00F0B145 /* SessionViewController.swift */,
 				9F8E46262ACED134006F69C0 /* SecondSessionTableViewCell.swift */,
@@ -432,6 +441,7 @@
 				9F5E80702ACC469800BBB1F6 /* NotificationTableViewCell.xib in Resources */,
 				9F8A06502AAAF7C000D3AF34 /* MyCourseTableViewCell.xib in Resources */,
 				9F8A062A2AAAF12700D3AF34 /* LaunchScreen.storyboard in Resources */,
+				9F9D26682AD57E7E00CF41B3 /* PopUpTableViewCell.xib in Resources */,
 				9F9028902ACFF3B400ADA4D6 /* ThirdSessionTableViewCell.xib in Resources */,
 				9FD929FB2AB9A6200043322B /* MySessionsTableViewCell.xib in Resources */,
 				9FE2306F2AAF468C0008B489 /* AcademicTableViewCell.xib in Resources */,
@@ -467,6 +477,7 @@
 				9F7453082ABB18F6006E6E52 /* MySessionModel.swift in Sources */,
 				9FCF8A5E2ACD9FDF00F0B145 /* SessionViewModel.swift in Sources */,
 				9F5E80722ACC4C8B00BBB1F6 /* AllActivitiesViewController.swift in Sources */,
+				9F9D26672AD57E7E00CF41B3 /* PopUpTableViewCell.swift in Sources */,
 				9F8A064F2AAAF7C000D3AF34 /* MyCourseTableViewCell.swift in Sources */,
 				9F8A06222AAAF12600D3AF34 /* ViewController.swift in Sources */,
 				9FCF8A582ACD7AA300F0B145 /* AppTypeCheck.swift in Sources */,
@@ -485,6 +496,7 @@
 				9F74530A2ABB191A006E6E52 /* MySessionViewModel.swift in Sources */,
 				9F8A06202AAAF12600D3AF34 /* SceneDelegate.swift in Sources */,
 				9F2A23722ACD30A100294F66 /* sideMenuViewController.swift in Sources */,
+				9F89CDE82AD5145A0001E222 /* AbsentInfoViewController.swift in Sources */,
 				9F77D33A2AB075DC00EE9513 /* ActivityIndicator.swift in Sources */,
 				9FCF8A4C2ACD41DC00F0B145 /* TransitionClass.swift in Sources */,
 				9FD929FA2AB9A6200043322B /* MySessionsTableViewCell.swift in Sources */,

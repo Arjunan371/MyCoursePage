@@ -244,3 +244,74 @@ enum BasicType: Codable {
         }
     }
 }
+
+struct AttendaceModel: Codable {
+    let statusCode: Int?
+    let status: Bool?
+    let message: String?
+    let data: [AttendaceModelData]?
+
+    enum CodingKeys: String, CodingKey {
+        case statusCode = "status_code"
+        case status, message, data
+    }
+}
+
+// MARK: - Datum
+struct AttendaceModelData: Codable {
+    let id: String?
+    let quizDetails: QuizDetails?
+    let scheduleID: [String]?
+    let modeBy: String?
+    let staffID: StaffID?
+    let status: Status?
+    let createdAt: String?
+    let students: Students?
+
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case quizDetails
+        case scheduleID = "scheduleId"
+        case modeBy
+        case staffID = "_staff_id"
+        case status, createdAt, students
+    }
+}
+
+enum ModeBy: String, Codable {
+    case retakeAbsent = "retake_absent"
+    case retakeAll = "retake_all"
+}
+
+// MARK: - QuizDetails
+struct QuizDetails: Codable {
+    let quiz: Quiz?
+}
+
+// MARK: - Quiz
+struct Quiz: Codable {
+}
+
+enum ScheduleID: String, Codable {
+    case the63B280F81C45699582B0C856 = "63b280f81c45699582b0c856"
+}
+
+enum StaffID: String, Codable {
+    case the60A4E6F250E71476C0C9Cb14 = "60a4e6f250e71476c0c9cb14"
+}
+
+enum Status: String, Codable {
+    case completed = "completed"
+}
+
+// MARK: - Students
+struct Students: Codable {
+    let status, id, studentID, time: String?
+
+    enum CodingKeys: String, CodingKey {
+        case status
+        case id = "_id"
+        case studentID = "_student_id"
+        case time
+    }
+}

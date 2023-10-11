@@ -585,8 +585,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "mySessionTopButtonAction(sender:)"
             landmarkType = "7">
             <Locations>
@@ -633,8 +633,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -697,8 +697,8 @@
             filePath = "MyCoursePage/MySessionView/MySessionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -713,8 +713,8 @@
             filePath = "MyCoursePage/SessionTabBar/SessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "forSessionApiIntegration(course:mySession:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -729,8 +729,8 @@
             filePath = "MyCoursePage/SessionTabBar/SessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "forSessionApiIntegration(course:mySession:completion:)"
             landmarkType = "7">
             <Locations>
@@ -770,54 +770,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A999EAB2-C28D-4372-A3A6-B86CA20970F2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyCoursePage/SessionTabBar/SessionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A999EAB2-C28D-4372-A3A6-B86CA20970F2 - 4cdf484d70cd3e37"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MyCoursePage.SessionViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "MyCoursePage"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/SessionTabBar/SessionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "250">
-               </Location>
-               <Location
-                  uuid = "A999EAB2-C28D-4372-A3A6-B86CA20970F2 - e12dbc23185a94d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in MyCoursePage.SessionViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "MyCoursePage"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjunan/Documents/MyCoursePage/MyCoursePage/SessionTabBar/SessionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "53CF6734-DE8C-4BC8-9E6F-B4F1E6AF92BE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -825,8 +777,8 @@
             filePath = "MyCoursePage/SessionTabBar/SessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "closeButtonAction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -841,8 +793,8 @@
             filePath = "MyCoursePage/SessionTabBar/SessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "closeButtonAction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -857,8 +809,8 @@
             filePath = "MyCoursePage/SessionTabBar/SessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "forSessionApiIntegration(course:mySession:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -873,8 +825,8 @@
             filePath = "MyCoursePage/SessionTabBar/SessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "forSessionApiIntegration(course:mySession:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -889,8 +841,8 @@
             filePath = "MyCoursePage/SessionTabBar/SessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "forSessionApiIntegration(course:mySession:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -898,32 +850,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E787731-3E18-4459-8324-21A08087E097"
+            uuid = "63579C12-6E80-4A04-8B1A-9209E0D7E613"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyCoursePage/SessionTabBar/SessionViewController.swift"
+            filePath = "MyCoursePage/SessionTabBar/SessionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "forAttendaceInfo(mySession:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EF631A77-3293-40E0-82D0-DD3BE80867CB"
-            shouldBeEnabled = "Yes"
+            uuid = "34888545-E8E5-48B3-B2BF-BF49C694BB72"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyCoursePage/SessionTabBar/SessionViewController.swift"
+            filePath = "MyCoursePage/SessionTabBar/AbsentInfoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0BAC2C64-27FA-4A63-A842-F6A33E9D9DE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCoursePage/SessionTabBar/AbsentInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

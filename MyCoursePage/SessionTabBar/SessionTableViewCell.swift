@@ -9,6 +9,8 @@ import UIKit
 
 class SessionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var sessionMissedLabel: UILabel!
     @IBOutlet weak var moreInfoButton: UIButton!
     @IBOutlet weak var coustomView: UIView!
     @IBOutlet weak var infraValueLabel: UILabel!
@@ -57,6 +59,12 @@ class SessionTableViewCell: UITableViewCell {
             staffLabel.text = "Multi Staff"
         } else {
             staffLabel.text = "Staff"
+        }
+        if model.schedules?.first?.status == "missed" {
+            sessionMissedLabel.text = "Session Missed"
+            sessionMissedLabel.textColor = .systemOrange
+        } else {
+            bottomView.isHidden = true
         }
            staffValueLabel.text = staffName(model:model)
             attendanceStaff.text = "Secondary Attendace Staff"

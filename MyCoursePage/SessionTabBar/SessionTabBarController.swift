@@ -3,6 +3,7 @@ import UIKit
 
 class SessionTabBarController: UITabBarController, UITabBarControllerDelegate {
 
+    var topicLevel:String?
     var tableModel:SessionElement? = nil
     var courseModelData:Datum? = nil
     
@@ -15,6 +16,7 @@ class SessionTabBarController: UITabBarController, UITabBarControllerDelegate {
             if let sessionVC = childVC as? SessionViewController {
                 sessionVC.tableModel = tableModel
                 sessionVC.courseModel = courseModelData
+                sessionVC.topicLevel = topicLevel
             }
         }
     }
